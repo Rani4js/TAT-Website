@@ -1,3 +1,5 @@
+</> YAML
+---
 deployment:
   tasks:
     - /bin/rm -rf ~/public_html/*
