@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - /bin/rm -rf ~/public_html/*
+    - /bin/cp -R dist/* ~/public_html/
