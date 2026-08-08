@@ -63,53 +63,13 @@ body{
     align-items: center;
     justify-content: center;
 }
-.get-quote-btn{
-    position:relative;
-    width:120px;
-    height:80px;
-    background:var(--tat-gold);
-    color:var(--tat-teal);
-    border:none;
-    border-radius:0 0 18px 18px;
-    cursor:pointer;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size: 18px;
-    font-weight:600;
-    transition:all .65s cubic-bezier(.4,0,.2,1);
-}
 
-.get-quote-btn span{
-    position:relative;
-    z-index:10;
-    transition:.4s;
+@media screen and (max-width: 768px) {
+    .navBar{
+      width: 100%;
+      background-color: #09090B;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    } 
 }
-
-.ribbon{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    z-index:1;
-    opacity:0;
-    transition:.65s;
-    border-end-end-radius: inherit;
-}
-
-.ribbon path{
-    fill:var(--tat-gold);
-}
-.get-quote-btn:hover{
-    width:120px;
-    height:190px;
-    background:transparent;
-    border-radius: 8px;
-    transform:translateY(6px);
-}
-
-.get-quote-btn:hover .ribbon{
-    opacity:1;
-}
-

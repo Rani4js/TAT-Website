@@ -1,0 +1,98 @@
+
+.quote-wrapper {
+    position: relative;
+    width: 120px;
+    height: 80px;
+}
+
+/* Button */
+
+.get-quote-btn{
+
+    position:relative;
+    z-index:10;
+
+    width:120px;
+    height:80px;
+
+    border:none;
+    outline:none;
+
+    cursor:pointer;
+
+    background:var(--tat-gold);
+
+    color:var(--tat-teal);
+
+    font-size:18px;
+    font-weight:700;
+
+    border-radius:0 0 18px 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition:
+        background .4s ease,
+        color .4s ease;
+}
+
+/* Text */
+
+.get-quote-btn span{
+    position:relative;
+    z-index:20;
+}
+
+/* Ribbon */
+
+.ribbon{
+
+    position:absolute;
+
+    left:0;
+    top:0px;
+
+    width:120px;
+    height:170px;
+
+    z-index:1;
+
+    opacity:0;
+
+    transform-origin:top center;
+
+    transform:scaleY(.42);
+
+    transition:
+        transform .6s cubic-bezier(.4,0,.2,1),
+        opacity .35s ease;
+
+    pointer-events:none;
+}
+
+.ribbon path{
+    fill:var(--tat-gold);
+}
+
+/* Hover */
+
+.quote-wrapper:hover .ribbon{
+
+    opacity:1;
+
+    transform:scaleY(1);
+}
+
+.quote-wrapper:hover .get-quote-btn{
+
+    background:transparent;
+}
+
+/* Optional Premium Hover */
+
+.quote-wrapper:hover .get-quote-btn span{
+
+    letter-spacing:.5px;
+}
