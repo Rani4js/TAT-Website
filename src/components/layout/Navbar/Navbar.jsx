@@ -8,7 +8,7 @@ function Navbar(){
     <div className="max-w-7xl mx-auto flex items-center py-4 px-6">
         {/* Left */}
         <div className="flex-1 flex items-center">
-          <img src={TATLogo} className="h-16 w-auto" alt="Together Advanced Technologies Logo"/>
+          <img src={TATLogo} className="h-16 w-auto" alt="TAT Logo"/>
         </div>
         {/* Center */}
         <div className="hidden lg:flex flex-1 flex justify-center">
