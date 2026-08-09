@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import BrandLogo from "../../../assets/TAT-Brand.png";  
+import TATLogo from "../../../assets/images/TAT.PNG"
 import { useState } from "react";
 function Navbar(){
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,7 +8,7 @@ function Navbar(){
     <div className="max-w-7xl mx-auto flex items-center py-4 px-6">
         {/* Left */}
         <div className="flex-1 flex items-center">
-          <img src={BrandLogo} alt="Together Advanced Technologies Logo" className="h-16 w-auto"/>
+          <img src={TATLogo} className="h-16 w-auto" alt="Together Advanced Technologies Logo"/>
         </div>
         {/* Center */}
         <div className="hidden lg:flex flex-1 flex justify-center">
