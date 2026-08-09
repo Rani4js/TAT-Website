@@ -1,23 +1,7 @@
-name: Deploy Website
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Build project
-        run: |
-          npm install
-          npm run build
-
-      - name: Deploy to public_html
-        run: |
-          /bin/rm -rf ~/public_html/*
-          /bin/cp -R dist/* ~/public_html/
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/sc8z3r9qunq7/public_html/
+    - npm install
+    - npm run build
+    - /bin/cp -R dist/. $DEPLOYPATH
