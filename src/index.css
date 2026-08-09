@@ -1,11 +1,12 @@
 @import "tailwindcss";
 :root {
-  --tat-gold: #D9A15B;
-  --tat-copper: #C67A35;
-  --tat-teal: #163c27;
+  --tat-gold:hsl(31.26deg 82.07% 71.57%);
+  --tat-blue: hsl(212.86deg 35% 23.53%);
+  --tat-teal: hsl(145deg 41.38% 22.75%);
+  --tat-card: hsl(40.82deg 94.17% 79.8%);
   --tat-dark: #0A0A0A;
-  --tat-card: #151515;
   --tat-text: #F5F5F5;
+  --tat-lightgrey:#aaa;
 }
 *{
   margin:0;
@@ -19,8 +20,8 @@ html{
 
 body{
   font-family:Inter, sans-serif;
-  background:#050816;
-  color:white;
+  background:var(--tat-dark);
+  color:var(--tat-text);
 }
 .brand-text {
     font-family: "Space Grotesk", sans-serif;
@@ -40,7 +41,6 @@ body{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-
     text-shadow:
         0 1px 0 rgba(255,255,255,.15),
         0 2px 3px rgba(0,0,0,.4),
@@ -67,7 +67,7 @@ body{
 @media screen and (max-width: 768px) {
     .navBar{
       width: 100%;
-      background-color: #09090B;
+      background-color: var(--tat-dark);
       overflow: hidden;
       display: flex;
       flex-direction: column;
