@@ -1,0 +1,30 @@
+.Hero-Container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 40px 20px;
+}
+
+.Hero-Content {
+    max-width: 600px;
+    padding: 5% 2%;
+
+}
+
+.Hero-Content h1 {
+    font-size: 88px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.Hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Hero-image img {
+    max-width: 100%;
+    height: auto;
+}
