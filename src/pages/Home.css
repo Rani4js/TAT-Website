@@ -72,8 +72,12 @@ body {
     position: relative;
 
     width: 100%;
-    height: 100vh;
-    min-height: 680px;
+
+    /* Don't lock the section to exactly 100vh */
+    min-height: 100vh;
+    min-height: 100svh;
+
+    height: auto;
 
     overflow: hidden;
 
@@ -87,7 +91,6 @@ body {
         ),
         var(--tat-dark);
 }
-
 
 /* =========================================================
    HERO GRID
@@ -215,7 +218,8 @@ body {
     width: 88%;
     max-width: 1500px;
 
-    height: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
 
     margin: 0 auto;
 
@@ -228,8 +232,13 @@ body {
     align-items: center;
 
     column-gap: 40px;
-}
 
+    /*
+       Reserve space for SCROLL TO EXPLORE
+       so it can never overlap the hero content.
+    */
+    padding-bottom: 90px;
+}
 
 /* =========================================================
    HERO CONTENT
@@ -458,46 +467,39 @@ body {
 ========================================================= */
 
 .hero-scroll {
-    position: absolute !important;
+    position: absolute;
 
-    left: 6% !important;
-    bottom: 28px !important;
+    left: 6%;
+    bottom: 100px;
 
-    z-index: 9999 !important;
+    z-index: 100;
 
-    display: flex !important;
+    display: flex;
 
-    align-items: center !important;
+    align-items: center;
 
-    gap: 12px !important;
+    gap: 12px;
 
-    width: auto !important;
-    height: auto !important;
+    color: var(--tat-lightgrey);
 
-    margin: 0 !important;
-    padding: 0 !important;
+    text-decoration: none;
 
-    color: var(--tat-lightgrey) !important;
+    font-size: 9px;
 
-    text-decoration: none !important;
+    font-weight: 700;
 
-    font-size: 9px !important;
-    font-weight: 700 !important;
+    letter-spacing: 3px;
 
-    letter-spacing: 3px !important;
-
-    line-height: 1 !important;
-
-    opacity: 1 !important;
-    visibility: visible !important;
-
-    transform: none !important;
+    line-height: 1;
 
     white-space: nowrap;
 
-    pointer-events: auto !important;
-}
+    opacity: 1;
 
+    visibility: visible;
+
+    pointer-events: auto;
+}
 
 /* =========================================================
    SCROLL LINE
@@ -1267,9 +1269,9 @@ body {
     padding:
         120px 0;
 
-    border-top:
+    /* border-top:
         1px solid
-        rgba(34, 53, 77, 0.6);
+        rgba(34, 53, 77, 0.6); */
 }
 
 
@@ -1731,8 +1733,8 @@ body {
     align-items: center;
     justify-content: center;
 
-    width: 62px;
-    height: 62px;
+    width: 392px;
+    height: 262px;
 
     margin-bottom: 25px;
 
@@ -1744,22 +1746,6 @@ body {
 
     letter-spacing: -1px;
 
-    border:
-        1px solid
-        rgba(217, 161, 91, 0.6);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(22, 60, 39, 0.8),
-            var(--tat-dark)
-        );
-
-    box-shadow:
-        0 0 30px
-        rgba(217, 161, 91, 0.08);
 }
 
 
@@ -1785,7 +1771,7 @@ body {
 
     align-items: center;
 
-    gap: 18px;
+    gap: 12px;
 
     color: var(--tat-gold);
 
@@ -1987,7 +1973,7 @@ body {
 
     left: 30px;
     right: 30px;
-    bottom: 25px;
+    bottom: 10px;
 
     max-width: 1150px;
 
@@ -2002,7 +1988,7 @@ body {
     gap: 35px;
 
     padding:
-        20px 22px;
+        28px 22px;
 
     background:
         rgba(10, 10, 10, 0.94);
@@ -2446,6 +2432,7 @@ body {
     .hero-section {
         height: auto;
 
+        min-height: 100vh;
         min-height: 100svh;
     }
 
@@ -2455,11 +2442,12 @@ body {
 
         height: auto;
 
+        min-height: 100vh;
         min-height: 100svh;
 
         padding:
             100px 0
-            100px;
+            110px;
 
         grid-template-columns: 1fr;
 
@@ -2469,6 +2457,7 @@ body {
 
     .hero-content {
         max-width: 720px;
+        
     }
 
 
@@ -2477,22 +2466,10 @@ body {
     }
 
 
-    .hero-glow {
-        width: 600px;
-        height: 600px;
-
-        top: 60%;
-        right: 50%;
-
-        transform:
-            translate(50%, -50%);
-    }
-
-
     .hero-scroll {
-        left: 5% !important;
+        left: 5%;
 
-        bottom: 25px !important;
+        bottom: 28px;
     }
 
 
@@ -2578,22 +2555,47 @@ body {
     /* HERO */
 
     .hero-section {
-        min-height: 100svh;
-
         height: auto;
+
+        min-height: 100vh;
+        min-height: 100svh;
     }
 
 
     .hero-container {
         width: 88%;
 
+        min-height: 100vh;
+        min-height: 100svh;
+
         padding:
             90px 0
-            95px;
+            100px;
+
+        grid-template-columns: 1fr;
 
         row-gap: 20px;
     }
 
+
+    .hero-scroll {
+        left: 6%;
+
+        bottom: 20px;
+
+        gap: 9px;
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .scroll-line {
+        width: 30px;
+
+        flex-basis: 30px;
+    }
 
     .hero-eyebrow {
         margin-bottom: 22px;
@@ -2653,27 +2655,6 @@ body {
 
         top: 62%;
     }
-
-
-    .hero-scroll {
-        left: 6% !important;
-
-        bottom: 18px !important;
-
-        gap: 9px !important;
-
-        font-size: 7px !important;
-
-        letter-spacing: 2px !important;
-    }
-
-
-    .hero-scroll .scroll-line {
-        width: 30px !important;
-
-        flex-basis: 30px;
-    }
-
 
     /* SERVICES */
 

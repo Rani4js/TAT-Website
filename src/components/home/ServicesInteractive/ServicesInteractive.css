@@ -289,7 +289,7 @@
 }
 
 
-.service-arrow {
+/* .service-arrow {
 
     width: 20px;
 
@@ -300,16 +300,16 @@
     transition:
         transform 0.4s ease,
         color 0.4s ease;
-}
+} */
 
 
-.service-card:hover .service-arrow {
+/* .service-card:hover .service-arrow {
 
     color: var(--tat-gold);
 
     transform:
         translate(5px,-5px);
-}
+} */
 
 
 /* =========================================================

@@ -3,7 +3,8 @@ import TATLogo from "../assets/images/TAT.PNG";
 import Hero from "../components/home/Hero/Hero";
 import Orbit from "../components/home/OrbitServices/Orbit";
 import Intro from "../components/home/Intro/Intro";
-import service from "../components/home/ServicesInteractive/ServicesInteractive"
+import service from "../components/home/ServicesInteractive/ServicesInteractive";
+import ServicesScroll from "../components/home/ServiceScroll/ServiceScroll";
 
 
 const services = [
@@ -112,7 +113,7 @@ const Home = () => {
                 className="hero-primary-btn"
               >
                 Explore Services
-                <span>↗</span>
+               
               </a>
 
               <a
@@ -150,115 +151,21 @@ const Home = () => {
         </a>
 
       </section>
-
+     
+       
+        
 
       {/* =====================================================
           SERVICES
       ===================================================== */}
-
-      <section
-        id="services"
-        className="services-section"
-      >
-
-        {/* Transition glow */}
-        <div className="services-transition"></div>
-
-
-        {/* Background grid */}
-        <div className="services-grid"></div>
-
-
-        {/* SECTION HEADER */}
-        <div className="services-header">
-
-          <div className="services-heading">
-
-            <span className="services-eyebrow">
-              WHAT WE DO
-            </span>
-
-            <h2>
-              <span className="services-white">
-                Technology.
-              </span>
-
-              <span className="services-gold">
-                Without limits.
-              </span>
-            </h2>
-
-          </div>
-
-
-          <p className="services-intro">
-            From websites to enterprise platforms,
-            we create technology solutions designed
-            around your business.
-          </p>
-
-        </div>
-
-
-        {/* SERVICE CARDS */}
-        <div className="services-columns">
-
-          {services.map((service) => (
-
-            <article
-              className="service-column"
-              key={service.number}
-            >
-
-              <div className="service-top">
-
-                <span className="service-number">
-                  {service.number}
-                </span>
-
-                <span className="service-arrow">
-                  ↗
-                </span>
-
-              </div>
-
-
-              <div className="service-middle">
-
-                <div className="service-icon">
-                  {service.icon}
-                </div>
-
-              </div>
-
-
-              <div className="service-bottom">
-
-                <h3>
-                  {service.title}
-                </h3>
-
-                <p>
-                  {service.description}
-                </p>
-
-                <span className="service-tech">
-                  {service.tech}
-                </span>
-
-              </div>
-
-            </article>
-
-          ))}
-
-        </div>
+       <ServicesScroll />
+      
              {/* ================= TECHNOLOGY ================= */}
 
       <section className="technology-section">
 
         <div className="section-number">
-          03 / TECHNOLOGY ECOSYSTEM
+          TECHNOLOGY ECOSYSTEM
         </div>
 
         <div className="technology-layout">
@@ -309,7 +216,7 @@ const Home = () => {
       <section className="process-section">
 
         <div className="section-number">
-          04 / OUR PROCESS
+          OUR PROCESS
         </div>
 
         <h2>
@@ -321,8 +228,6 @@ const Home = () => {
 
           <div className="process-item">
 
-            <span>01</span>
-
             <h3>Discover</h3>
 
             <p>
@@ -333,7 +238,6 @@ const Home = () => {
 
           <div className="process-item">
 
-            <span>02</span>
 
             <h3>Design</h3>
 
@@ -346,7 +250,7 @@ const Home = () => {
 
           <div className="process-item">
 
-            <span>03</span>
+        
 
             <h3>Build</h3>
 
@@ -359,7 +263,7 @@ const Home = () => {
 
           <div className="process-item">
 
-            <span>04</span>
+   
 
             <h3>Grow</h3>
 
@@ -401,7 +305,7 @@ const Home = () => {
 
         <a href="/contact" className="cta-button">
             Get in touch
-            <span>↗</span>
+            
         </a>
 
     </div>
@@ -409,166 +313,11 @@ const Home = () => {
 </section>
 
 
-{/* =====================================================
-    FOOTER
-===================================================== */}
-
-<footer className="site-footer">
-
-    <div className="footer-grid"></div>
-
-    <div className="footer-glow"></div>
-
-    <div className="footer-container">
-
-        {/* TOP FOOTER */}
-
-        <div className="footer-top">
-
-            {/* BRAND */}
-
-            <div className="footer-brand">
-
-                <div className="footer-logo">
-                    TAT
-                </div>
-
-                <p>
-                    Together Advanced Technologies brings
-                    design, development, marketing and data
-                    together under one technology ecosystem.
-                </p>
-
-                <a
-                    href="/contact"
-                    className="footer-project-link"
-                >
-                    Start a project
-                    <span>↗</span>
-                </a>
-
-            </div>
 
 
-            {/* NAVIGATION */}
-
-            <div className="footer-column">
-
-                <span className="footer-label">
-                    EXPLORE
-                </span>
-
-                <a href="/">Home</a>
-
-                <a href="/services">Services</a>
-
-                <a href="/about">About</a>
-
-                <a href="/contact">Contact</a>
-
-            </div>
 
 
-            {/* SERVICES */}
-
-            <div className="footer-column">
-
-                <span className="footer-label">
-                    CAPABILITIES
-                </span>
-
-                <a href="/services">
-                    Web Design
-                </a>
-
-                <a href="/services">
-                    Email Marketing
-                </a>
-
-                <a href="/services">
-                    Salesforce
-                </a>
-
-                <a href="/services">
-                    AEM Sites
-                </a>
-
-                <a href="/services">
-                    React Apps
-                </a>
-
-                <a href="/services">
-                    Data Cloud
-                </a>
-
-            </div>
-
-
-            {/* TECHNOLOGY */}
-
-            <div className="footer-column">
-
-                <span className="footer-label">
-                    TECHNOLOGY
-                </span>
-
-                <span>React</span>
-
-                <span>JavaScript</span>
-
-                <span>AEM</span>
-
-                <span>Salesforce</span>
-
-                <span>Marketing Cloud</span>
-
-                <span>Data Cloud</span>
-
-            </div>
-
-        </div>
-
-
-        {/* FOOTER DIVIDER */}
-
-        <div className="footer-divider"></div>
-
-
-        {/* BOTTOM FOOTER */}
-
-        <div className="footer-bottom">
-
-            <span>
-                © 2026 Together Advanced Technologies
-            </span>
-
-            <div className="footer-bottom-links">
-
-                <a href="/privacy">
-                    Privacy
-                </a>
-
-                <a href="/terms">
-                    Terms
-                </a>
-
-                <a href="/cookies">
-                    Cookies
-                </a>
-
-            </div>
-
-            <span className="footer-status">
-                <span></span>
-                DIGITAL TECHNOLOGY PARTNER
-            </span>
-
-        </div>
-
-    </div>
-
-</footer>
-
+      
 
 {/* =====================================================
     COOKIE BANNER
@@ -625,8 +374,6 @@ const Home = () => {
     </div>
 
 </div>
-      
-</section>
     </main>
   );
 }

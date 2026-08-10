@@ -5,8 +5,7 @@ import {
   Cloud,
   Layers,
   Atom,
-  Database,
-  ArrowUpRight,
+  Database
 } from "lucide-react";
 
 const services = [
@@ -104,7 +103,7 @@ function ServicesInteractive() {
                   {service.number}
                 </span>
 
-                <ArrowUpRight className="service-arrow" />
+                
 
               </div>
 
