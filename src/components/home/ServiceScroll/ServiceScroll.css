@@ -199,6 +199,19 @@
 }
 
 
+@media (min-width: 701px) {
+
+    .constellation-lines {
+        display: block;
+    }
+
+
+    .constellation::before {
+        display: none;
+    }
+}
+
+
 /* =========================================================
    SVG LINES
 ========================================================= */
@@ -747,24 +760,49 @@
     */
 
     .constellation {
-        height: 850px;
+        height: 700px;
 
         margin-top: 10px;
     }
 
 
     .constellation-lines {
-        display: block;
+        display: none;
+    }
+
+
+    .constellation::before {
+        content: "";
+
+        position: absolute;
+
+        top: 5%;
+        bottom: 5%;
+        left: 50%;
+
+        width: 1px;
+
+        background:
+            linear-gradient(
+                to bottom,
+                transparent,
+                rgba(217, 161, 91, 0.4) 12%,
+                rgba(217, 161, 91, 0.4) 88%,
+                transparent
+            );
+
+        transform: translateX(-50%);
+        pointer-events: none;
     }
 
 
     .constellation-center {
         top: 50%;
 
-        width: 240px;
-        height: 240px;
+        width: 220px;
+        height: 220px;
 
-        padding: 30px;
+        padding: 24px;
     }
 
 
@@ -789,10 +827,10 @@
 
 
     .constellation-node {
-        width: 82px;
-        height: 82px;
+        width: 76px;
+        height: 76px;
 
-        padding: 10px;
+        padding: 8px;
     }
 
 
@@ -804,7 +842,7 @@
     .node-title {
         font-size: 7px;
 
-        max-width: 70px;
+        max-width: 68px;
     }
 
 
@@ -814,49 +852,114 @@
 
 
     .node-web {
-        left: 3%;
+        left: 4%;
         top: 5%;
     }
 
 
     .node-email {
-        right: 3%;
+        right: 4%;
         left: auto;
 
-        top: 18%;
+        top: 19%;
     }
 
 
     .node-salesforce {
-        left: 3%;
+        left: 4%;
         right: auto;
 
-        top: 34%;
+        top: 33%;
     }
 
 
     .node-aem {
-        right: 3%;
+        right: 4%;
         left: auto;
 
-        bottom: 32%;
+        bottom: 33%;
     }
 
 
     .node-react {
-        left: 3%;
-        bottom: 14%;
+        left: 4%;
+        bottom: 19%;
     }
 
 
     .node-data {
-        right: 3%;
+        right: 4%;
         bottom: 2%;
     }
 
 
     .constellation-footer {
         margin-top: 10px;
+    }
+
+
+    @media (max-width: 420px) {
+
+        .constellation {
+            height: 640px;
+        }
+
+
+        .constellation-center {
+            width: 190px;
+            height: 190px;
+            padding: 20px;
+        }
+
+
+        .constellation-center h3 {
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+
+
+        .constellation-center p {
+            max-width: 160px;
+            margin-bottom: 10px;
+            font-size: 9px;
+        }
+
+
+        .center-number {
+            margin-bottom: 10px;
+            font-size: 8px;
+        }
+
+
+        .center-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+
+        .center-tech {
+            max-width: 140px;
+            font-size: 7px;
+            line-height: 1.4;
+        }
+
+
+        .constellation-node {
+            width: 68px;
+            height: 68px;
+        }
+
+
+        .node-icon {
+            font-size: 18px;
+        }
+
+
+        .node-title {
+            font-size: 6px;
+        }
     }
 
 }

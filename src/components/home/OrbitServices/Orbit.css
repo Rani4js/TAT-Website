@@ -319,6 +319,17 @@
     box-shadow: none;
 }
 
+.orbit-web .service-logo img {
+    width: 48px;
+    height: 32px;
+}
+
+.orbit-react .service-logo img {
+    width: 90px;
+    height: 60px;
+}
+
+
 
 /* =========================================================
    KEEP SERVICE LOGOS UPRIGHT
@@ -388,6 +399,17 @@
         width: 105px;
         height: 105px;
     }
+
+    .orbit-web .service-logo img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .orbit-react .service-logo img {
+        width: 72px;
+        height: 72px;
+    }
+
 }
 
 
@@ -441,6 +463,17 @@
         width: 80px;
         height: 80px;
     }
+
+    .orbit-web .service-logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .orbit-react .service-logo img {
+        width: 58px;
+        height: 58px;
+    }
+
 }
 
 
@@ -496,13 +529,13 @@
     }
 
     .tat-orbit-center {
-        width: 95px;
-        height: 95px;
+        width: 78px;
+        height: 78px;
     }
 
     .tat-orbit-center img {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
     .service-logo {
@@ -569,13 +602,13 @@
     }
 
     .tat-orbit-center {
-        width: 80px;
-        height: 80px;
+        width: 64px;
+        height: 64px;
     }
 
     .tat-orbit-center img {
-        width: 50px;
-        height: 50px;
+        width: 42px;
+        height: 42px;
     }
 
     .service-logo {
@@ -587,6 +620,17 @@
         width: 54px;
         height: 54px;
     }
+
+    .orbit-web .service-logo img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .orbit-react .service-logo img {
+        width: 44px;
+        height: 44px;
+    }
+
 }
 
 

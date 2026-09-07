@@ -28,14 +28,6 @@ const Footer = () => {
                     together under one technology ecosystem.
                 </p>
 
-                <a
-                    href="/contact"
-                    className="footer-project-link"
-                >
-                    Start a project<span>→</span>
-                    
-                </a> 
-
             </div>
 
 
