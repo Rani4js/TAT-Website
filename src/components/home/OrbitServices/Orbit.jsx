@@ -1,17 +1,17 @@
 import "./Orbit.css";
 
 import TATLogo from "../../../assets/images/TAT.PNG";
-import WebLogo from "../../../assets/images/UI.png";
 import AemLogo from "../../../assets/images/AEM.png";
-import ReactLogo from "../../../assets/images/reactapp.png";
 import SalesforceLogo from "../../../assets/images/Salesforce-icon.png";
+import FigmaLogo from "../../../assets/images/figma-official.svg";
+import ReactLogo from "../../../assets/images/react-official.svg";
 
 
 const services = [
   {
-    name: "WEB DESIGN",
-    img: WebLogo,
+    name: "UI / UX",
     className: "orbit-web",
+    img: FigmaLogo,
   },
   {
     name: "AEM",
@@ -20,8 +20,8 @@ const services = [
   },
   {
     name: "REACT",
-    img: ReactLogo,
     className: "orbit-react",
+    img: ReactLogo,
   },
   {
     name: "SALESFORCE",
@@ -86,7 +86,7 @@ function Orbit() {
 
               <img
                 src={service.img}
-                alt={service.name}
+                alt={`${service.name} official logo`}
               />
 
             </div>

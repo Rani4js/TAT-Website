@@ -197,15 +197,19 @@ const Home = () => {
         </div>
 
 
-        <div className="tech-marquee">
-
-          <span>REACT</span>
-          <span>AEM</span>
-          <span>SALESFORCE</span>
-          <span>DATA CLOUD</span>
-          <span>JAVASCRIPT</span>
-          <span>MARKETING CLOUD</span>
-
+        <div className="tech-marquee" aria-label="Technology stack">
+          {[
+            "REACT",
+            "AEM",
+            "SALESFORCE",
+            "DATA CLOUD",
+            "JAVASCRIPT",
+            "MARKETING CLOUD",
+          ].map((technology) => (
+            <div className="technology-card" key={technology}>
+              <span className="technology-card-name">{technology}</span>
+            </div>
+          ))}
         </div>
 
       </section>
@@ -227,7 +231,6 @@ const Home = () => {
         <div className="process-grid">
 
           <div className="process-item">
-
             <h3>Discover</h3>
 
             <p>
@@ -237,8 +240,6 @@ const Home = () => {
           </div>
 
           <div className="process-item">
-
-
             <h3>Design</h3>
 
             <p>
@@ -249,9 +250,6 @@ const Home = () => {
           </div>
 
           <div className="process-item">
-
-        
-
             <h3>Build</h3>
 
             <p>
@@ -262,9 +260,6 @@ const Home = () => {
           </div>
 
           <div className="process-item">
-
-   
-
             <h3>Grow</h3>
 
             <p>
@@ -289,10 +284,6 @@ const Home = () => {
 
     <div className="cta-content">
 
-        <div className="section-number">
-            05 / LET'S BUILD
-        </div>
-
         <h2>
             Ready to build
             <span>what's next?</span>
@@ -315,65 +306,6 @@ const Home = () => {
 
 
 
-
-
-      
-
-{/* =====================================================
-    COOKIE BANNER
-===================================================== */}
-
-<div className="cookie-banner">
-
-    <div className="cookie-content">
-
-        <div className="cookie-icon">
-            ◌
-        </div>
-
-        <div className="cookie-text">
-
-            <strong>
-                Your privacy matters.
-            </strong>
-
-            <p>
-                We use cookies to improve your experience,
-                understand how our website is used and
-                provide relevant content.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div className="cookie-actions">
-
-        <button
-            className="cookie-settings"
-            type="button"
-        >
-            Settings
-        </button>
-
-        <button
-            className="cookie-decline"
-            type="button"
-        >
-            Decline
-        </button>
-
-        <button
-            className="cookie-accept"
-            type="button"
-        >
-            Accept
-        </button>
-
-    </div>
-
-</div>
     </main>
   );
 }
