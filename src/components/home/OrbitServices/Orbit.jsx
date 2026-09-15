@@ -121,10 +121,18 @@ function SlideArtwork({ type }) {
       <text x="221" y="302" textAnchor="middle">SERVICE</text>
       <text x="451" y="251" textAnchor="middle">MARKETING</text>
     </g>
-    <circle cx="300" cy="160" r="66" fill="url(#dataCloudCore)" stroke="#daa55b" strokeWidth="3"/>
-    <circle cx="300" cy="160" r="48" fill="none" stroke="#f5eadb" strokeWidth="1.5" opacity=".6"/>
-    <path d="M278 160c0-14 10-24 23-24 6-12 25-12 31 0 14-2 23 15 14 24h-68z" fill="#f5eadb" opacity=".92"/>
-    <path d="M288 174h24M300 162v24" stroke="#daa55b" strokeWidth="4" strokeLinecap="round"/>
+    <g transform="translate(236 92)">
+      <circle cx="64" cy="68" r="58" fill="url(#dataCloudCore)" stroke="#daa55b" strokeWidth="3"/>
+      <circle cx="64" cy="68" r="47" fill="none" stroke="#f5eadb" strokeWidth="1.5" opacity=".6"/>
+      <path d="M31 73c-8-15 3-30 19-30 6-15 29-15 35 0 18-2 29 19 17 30H31z" fill="#6bb897"/>
+      <path d="M41 73h46" stroke="#f5eadb" strokeWidth="3" strokeLinecap="round"/>
+      <text x="64" y="88" textAnchor="middle" fill="#f5eadb" fontSize="14" fontWeight="700">DATA</text>
+      <text x="64" y="108" textAnchor="middle" fill="#daa55b" fontSize="10" fontWeight="700" letterSpacing="1">CLOUD</text>
+      <g fill="#daa55b">
+        <circle cx="64" cy="4" r="4"/><circle cx="128" cy="68" r="4"/>
+        <circle cx="64" cy="132" r="4"/><circle cx="0" cy="68" r="4"/>
+      </g>
+    </g>
     <g fill="#daa55b">
       <circle cx="112" cy="111" r="7"/>
       <circle cx="488" cy="126" r="7"/>
