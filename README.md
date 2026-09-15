@@ -1,16 +1,89 @@
-# React + Vite
+# Together Advanced Technologies Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Responsive React website for Together Advanced Technologies (TAT), built with Vite. The site presents TAT's digital technology services through a responsive, theme-matched experience with animated inline SVG capability artwork.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Responsive Home, About, Services, Contact, Careers, Privacy, and Terms pages
+- Route-aware navigation and Get Quote modal
+- Responsive technology carousel for Salesforce, UI/UX, Adobe AEM, React, and Data Cloud
+- Native SVG capability artwork with official Salesforce and AEM assets where appropriate
+- Cookie consent preferences for necessary, analytics, and marketing cookies
+- Consent-gated browser/device information storage
+- PHP/PDO endpoint and MySQL schema for browser-information storage
+- Production output in `dist/`
 
-## React Compiler
+## Requirements
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js 20 or newer
+- npm
 
-## Expanding the ESLint configuration
+## Local development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Vite starts the development server at the URL shown in the terminal, normally `http://localhost:5173`.
+
+## Production build
+
+```bash
+npm run build
+npm run preview
+```
+
+The build command regenerates the tracked `dist/` directory. The preview command serves the production build locally.
+
+## Browser-information API
+
+The browser-information endpoint is located at:
+
+```text
+public/api/browser-info.php
+```
+
+The database schema is located at:
+
+```text
+public/api/browser-information.sql
+```
+
+To connect the frontend to the deployed PHP endpoint, copy `.env.example` to `.env` and set:
+
+```env
+VITE_BROWSER_INFO_API_URL=https://your-domain.example/api/browser-info.php
+```
+
+Configure the database credentials, allowed origin, and table name in the PHP endpoint before uploading it to cPanel. Do not commit `.env` or database credentials.
+
+## cPanel deployment
+
+1. Run `npm run build`.
+2. Upload the contents of `dist/` to the hosting document root, commonly `public_html/`.
+3. Upload `public/api/browser-info.php` and `public/api/browser-information.sql` as needed for the API setup.
+4. Create the MySQL table by importing `browser-information.sql` in phpMyAdmin.
+5. Configure the PHP database connection and allowed origin.
+6. Set the production `VITE_BROWSER_INFO_API_URL` before building the frontend.
+
+For client-side routing, configure the host to serve `index.html` for application routes when the hosting provider supports rewrite rules.
+
+## GitHub Pages
+
+GitHub Pages deployment is configured in:
+
+```text
+.github/workflows/deploy-pages.yml
+```
+
+The workflow builds and deploys the `sreenivaskoda-react-dev-server` branch. Enable **Settings → Pages → Build and deployment → GitHub Actions** in the repository before the first deployment. The Vite base path and SPA fallback are configured for the repository site.
+
+## Useful commands
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the Vite development server |
+| `npm run build` | Create the production build |
+| `npm run preview` | Preview the production build |
+| `npm run lint` | Run ESLint |
