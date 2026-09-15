@@ -131,7 +131,6 @@ function SlideArtwork({ type }) {
       <circle cx="221" cy="297" r="7"/>
       <circle cx="451" cy="246" r="7"/>
     </g>
-    <text x="300" y="346" textAnchor="middle" fill="#f5eadb" fontSize="20" fontWeight="700" letterSpacing="4">ONE CUSTOMER VIEW</text>
   </svg>;
 }
 
