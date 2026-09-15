@@ -64,10 +64,6 @@ function SlideArtwork({ type }) {
         <rect x="38" y="274" width="132" height="36" rx="12"/><rect x="430" y="274" width="132" height="36" rx="12"/>
         <rect x="38" y="310" width="132" height="36" rx="12"/><rect x="430" y="310" width="132" height="36" rx="12"/>
       </g>
-      <g fill="#daa55b">
-        <circle cx="118" cy="58" r="6"/><circle cx="482" cy="58" r="6"/>
-        <circle cx="118" cy="302" r="6"/><circle cx="482" cy="302" r="6"/>
-      </g>
       <g fill="#f5eadb" fontSize="11" fontWeight="700" letterSpacing=".7">
         <text x="104" y="63" textAnchor="middle">SITES</text><text x="496" y="63" textAnchor="middle">ASSETS</text>
         <text x="104" y="115" textAnchor="middle">FORMS</text><text x="496" y="115" textAnchor="middle">SCREENS</text>
@@ -128,16 +124,6 @@ function SlideArtwork({ type }) {
       <path d="M41 73h46" stroke="#f5eadb" strokeWidth="3" strokeLinecap="round"/>
       <text x="64" y="88" textAnchor="middle" fill="#f5eadb" fontSize="14" fontWeight="700">DATA</text>
       <text x="64" y="108" textAnchor="middle" fill="#daa55b" fontSize="10" fontWeight="700" letterSpacing="1">CLOUD</text>
-      <g fill="#daa55b">
-        <circle cx="64" cy="4" r="4"/><circle cx="128" cy="68" r="4"/>
-        <circle cx="64" cy="132" r="4"/><circle cx="0" cy="68" r="4"/>
-      </g>
-    </g>
-    <g fill="#daa55b">
-      <circle cx="112" cy="111" r="7"/>
-      <circle cx="488" cy="126" r="7"/>
-      <circle cx="221" cy="297" r="7"/>
-      <circle cx="451" cy="246" r="7"/>
     </g>
   </svg>;
 }
