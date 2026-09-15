@@ -1,0 +1,7 @@
+<svg fill="none" role="img" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <title>Abstract geometric design</title>
+  <path d="M32 7 55 20.5v23L32 57 9 43.5v-23L32 7Z" fill="#F2B97B" opacity=".95"/>
+  <path d="m32 7 23 13.5L32 34 9 20.5 32 7Z" fill="#6BB897"/>
+  <path d="M32 34v23M9 20.5 32 34l23-13.5" stroke="#0A0A0A" stroke-width="3"/>
+  <path d="m22 25 10-6 10 6-10 6-10-6Z" fill="#0A0A0A" opacity=".75"/>
+</svg>

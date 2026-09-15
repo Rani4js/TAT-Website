@@ -77,7 +77,6 @@ const Services = () => (
               <p>{service.description}</p>
               <span className="service-detail-tech">{service.details}</span>
             </div>
-            <span className="service-detail-symbol" aria-hidden="true">↗</span>
           </article>
         ))}
       </div>

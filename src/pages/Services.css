@@ -183,15 +183,6 @@
   line-height: 1.7;
 }
 
-.service-detail-symbol {
-  position: absolute;
-  right: 28px;
-  bottom: 24px;
-  color: var(--tat-gold);
-  font-size: 24px;
-  opacity: 0.7;
-}
-
 .services-approach {
   width: 88%;
   max-width: 900px;
@@ -239,6 +230,7 @@
   .services-hero-mark {
     right: 7%;
     opacity: 0.7;
+    gap: 14px;
   }
 
   .services-list-section {
@@ -272,6 +264,11 @@
     font-size: 13px;
   }
 
+  .services-hero p {
+    width: 76%;
+    max-width: 370px;
+  }
+
   .services-hero-mark {
     top: 80px;
     right: 6%;
@@ -281,6 +278,16 @@
     font-size: 100px;
   }
 
+  .services-hero-mark i {
+    height: 120px;
+  }
+
+  .services-hero-mark small {
+    writing-mode: vertical-rl;
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
   .service-detail-card {
     min-height: 245px;
     padding: 24px;
@@ -288,10 +295,6 @@
 
   .service-detail-body h3 {
     font-size: 29px;
-  }
-
-  .service-detail-symbol {
-    right: 22px;
   }
 
   .services-approach {

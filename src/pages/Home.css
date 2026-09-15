@@ -226,12 +226,12 @@ body {
     display: grid;
 
     grid-template-columns:
-        minmax(0, 0.9fr)
-        minmax(500px, 1.1fr);
+        minmax(0, 0.82fr)
+        minmax(560px, 1.18fr);
 
     align-items: center;
 
-    column-gap: 40px;
+    column-gap: 0;
 
     /*
        Reserve space for SCROLL TO EXPLORE
@@ -458,6 +458,16 @@ body {
 
     align-items: center;
     justify-content: center;
+}
+
+@media (min-width: 901px) {
+    .hero-content {
+        padding-right: 0;
+    }
+
+    .hero-visual {
+        margin-left: -28px;
+    }
 }
 
 

@@ -278,8 +278,7 @@
   }
 
   .contact-orbit {
-    right: -90px;
-    opacity: 0.6;
+    display: none;
   }
 
   .contact-content {
@@ -307,9 +306,7 @@
   }
 
   .contact-orbit {
-    right: -145px;
-    width: 240px;
-    height: 240px;
+    display: none;
   }
 
   .contact-content {

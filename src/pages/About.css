@@ -319,6 +319,7 @@
   .about-hero-mark {
     right: 6%;
     opacity: 0.75;
+    gap: 14px;
   }
 
   .about-hero-mark span {
@@ -327,6 +328,12 @@
 
   .about-hero-mark i {
     height: 75px;
+  }
+
+  .about-hero-mark small {
+    line-height: 1.4;
+    letter-spacing: 2px;
+    white-space: nowrap;
   }
 
   .about-story,
@@ -391,7 +398,25 @@
   .about-hero-mark {
     right: 3%;
     bottom: 35px;
-    transform: scale(0.72);
-    transform-origin: right bottom;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .about-hero-mark span {
+    font-size: 64px;
+    line-height: 0.8;
+  }
+
+  .about-hero-mark i {
+    width: 42px;
+    height: 1px;
+  }
+
+  .about-hero-mark small {
+    writing-mode: horizontal-tb;
+    line-height: 1.4;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
   }
 }

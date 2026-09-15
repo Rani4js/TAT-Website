@@ -209,13 +209,6 @@
   margin: 0 0 22px;
 }
 
-.career-role-card a {
-  flex: 0 0 auto;
-  color: var(--tat-gold);
-  font-size: 30px;
-  text-decoration: none;
-}
-
 .careers-cta {
   width: 88%;
   max-width: 900px;
@@ -293,9 +286,15 @@
     letter-spacing: -3px;
   }
 
+  .careers-hero p {
+    width: 94%;
+    max-width: 390px;
+  }
+
   .careers-hero-mark {
     right: 3%;
-    bottom: 35px;
+    top: 35px;
+    bottom: auto;
     transform: scale(0.72);
     transform-origin: right bottom;
   }

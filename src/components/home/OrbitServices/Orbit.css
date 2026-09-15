@@ -1,648 +1,207 @@
-/* =========================================================
-   TECHNOLOGY ORBIT
-========================================================= */
-
 .technology-orbit-section {
     position: relative;
     width: 100%;
-    min-height: 760px;
-
+    min-height: clamp(480px, 54vw, 720px);
     display: flex;
     align-items: center;
     justify-content: center;
-
     overflow: hidden;
-   
 }
 
-.technology-orbit {
+.technology-gateway {
     position: relative;
-
-    width: 720px;
-    height: 720px;
-
+    width: min(900px, 100%);
+    height: clamp(480px, 48vw, 680px);
     display: flex;
     align-items: center;
     justify-content: center;
-
-    perspective: 1000px;
+    isolation: isolate;
 }
 
-
-/* =========================================================
-   ORBIT RINGS
-========================================================= */
-
-.orbit-ring {
+.creative-carousel {
     position: absolute;
-
     left: 50%;
     top: 50%;
-
+    width: min(760px, 96%);
+    height: min(700px, 96%);
     transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-    border: 1px solid rgba(218, 165, 91, 0.35);
-
-    pointer-events: none;
-}
-
-.orbit-ring-1 {
-    width: 230px;
-    height: 230px;
-}
-
-.orbit-ring-2 {
-    width: 320px;
-    height: 320px;
-}
-
-.orbit-ring-3 {
-    width: 430px;
-    height: 430px;
-}
-
-.orbit-ring-4 {
-    width: 550px;
-    height: 550px;
-}
-
-
-/* =========================================================
-   CENTER GLOW
-========================================================= */
-
-.orbit-center-glow {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 260px;
-    height: 260px;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background: radial-gradient(
-        circle,
-        rgba(218, 165, 91, 0.18),
-        rgba(218, 165, 91, 0.05) 45%,
-        transparent 72%
-    );
-
-    filter: blur(20px);
-
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   TAT CENTER
-========================================================= */
-
-.tat-orbit-center {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 130px;
-    height: 130px;
-
-    transform: translate(-50%, -50%);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-   background:
-    radial-gradient(
-      circle,
-      #203b34,
-      #08100e
-    );
-
-    border: 1px solid var(--tat-gold, #daa55b);
-
-    box-shadow:
-        0 0 25px rgba(218, 165, 91, 0.25),
-        0 0 70px rgba(218, 165, 91, 0.10);
-
-    perspective: 1000px;
-    transform-style: preserve-3d;
-
-    z-index: 30;
-}
-
-
-/* =========================================================
-   TAT LOGO
-========================================================= */
-
-.tat-orbit-center img {
-    width: 135px;
-    height: 95px;
-
-    object-fit: contain;
-    display: block;
-
-    transform-style: preserve-3d;
-    backface-visibility: visible;
-}
-
-
-/* =========================================================
-   TAT VERTICAL ROTATION
-========================================================= */
-
-@keyframes tatVerticalSpin {
-
-    0% {
-        transform:
-            rotateY(0deg)
-            scaleX(1);
-    }
-
-    25% {
-        transform:
-            rotateY(90deg)
-            scaleX(0.72);
-    }
-
-    50% {
-        transform:
-            rotateY(180deg)
-            scaleX(1);
-    }
-
-    75% {
-        transform:
-            rotateY(270deg)
-            scaleX(0.72);
-    }
-
-    100% {
-        transform:
-            rotateY(360deg)
-            scaleX(1);
-    }
-}
-
-
-/* =========================================================
-   SERVICE ORBIT
-========================================================= */
-
-.service-orbit {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 0;
-    height: 0;
-
-    transform-origin: 0 0;
-
-    animation:
-        serviceOrbit
-        var(--orbit-speed)
-        linear
-        infinite;
-
-    z-index: 20;
-}
-
-
-/* =========================================================
-   SERVICE POSITIONS
-========================================================= */
-
-.orbit-web {
-    --orbit-radius: 110px;
-    --start-angle: 0deg;
-    --orbit-speed: 10s;
-}
-
-.orbit-aem {
-    --orbit-radius: 160px;
-    --start-angle: 90deg;
-    --orbit-speed: 20s;
-}
-
-.orbit-react {
-    --orbit-radius: 220px;
-    --start-angle: 120deg;
-    --orbit-speed: 36s;
-}
-
-.orbit-salesforce {
-    --orbit-radius: 260px;
-    --start-angle: 180deg;
-    --orbit-speed: 50s;
-}
-
-
-/* =========================================================
-   ORBIT ANIMATION
-========================================================= */
-
-@keyframes serviceOrbit {
-
-    from {
-        transform:
-            rotate(var(--start-angle))
-            translateX(var(--orbit-radius));
-    }
-
-    to {
-        transform:
-            rotate(
-                calc(var(--start-angle) + 360deg)
-            )
-            translateX(var(--orbit-radius));
-    }
-}
-
-
-/* =========================================================
-   SERVICE LOGO
-========================================================= */
-
-.service-logo {
-    position: absolute;
-
-    left: 0;
-    top: 0;
-
-    width: 100px;
-    height: 9px;
-
-    transform:
-        translate(-50%, -50%)
-        rotate(calc(-1 * var(--start-angle)));
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: transparent;
-    border: none;
+    overflow: hidden;
+    border: 0;
     border-radius: 0;
-    box-shadow: none;
-
-    overflow: visible;
-
-    animation:
-        serviceCounterRotate
-        var(--orbit-speed)
-        linear
-        infinite;
-}
-
-.service-logo img {
-    width: 150px;
-    height: 90px;
-
-    max-width: none;
-
-    object-fit: contain;
-    display: block;
-
     background: transparent;
-    border: none;
     box-shadow: none;
+    perspective: 1200px;
+    z-index: 1;
 }
 
-.orbit-web .service-logo img {
-    width: 48px;
-    height: 32px;
+.creative-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.04);
+    transition: opacity 500ms ease, transform 700ms ease, visibility 500ms ease;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 42%, rgba(0, 0, 0, 0.94) 66%, transparent 100%);
+    mask-image: radial-gradient(ellipse at center, #000 42%, rgba(0, 0, 0, 0.94) 66%, transparent 100%);
+    background: transparent;
 }
 
-.orbit-react .service-logo img {
-    width: 90px;
-    height: 60px;
+.creative-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    animation: carouselSpin360 900ms cubic-bezier(0.22, 0.7, 0.2, 1);
+    backface-visibility: hidden;
 }
 
+.creative-slide::before {
+    content: "";
+    position: absolute;
+    inset: 14%;
+    z-index: -1;
+    border-radius: 50%;
+    background: rgba(107, 184, 151, 0.2);
+    filter: blur(46px);
+    opacity: 0.75;
+}
 
-
-/* =========================================================
-   KEEP SERVICE LOGOS UPRIGHT
-========================================================= */
-
-@keyframes serviceCounterRotate {
-
+@keyframes carouselSpin360 {
     from {
-        transform:
-            translate(-50%, -50%)
-            rotate(calc(-1 * var(--start-angle)));
+        transform: scale(0.96) rotateY(-360deg);
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 1;
     }
 
     to {
-        transform:
-            translate(-50%, -50%)
-            rotate(
-                calc(
-                    -1 *
-                    (var(--start-angle) + 360deg)
-                )
-            );
+        transform: scale(1) rotateY(0deg);
+        opacity: 1;
     }
 }
 
-
-/* =========================================================
-   SERVICE HOVER
-========================================================= */
-
-.service-logo:hover {
-    filter:
-        drop-shadow(
-            0 0 12px
-            rgba(218, 165, 91, 0.45)
-        );
+.creative-slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at center, transparent 48%, rgba(7, 19, 14, 0.22) 100%),
+        linear-gradient(180deg, transparent 48%, rgba(4, 12, 8, 0.38));
+    mix-blend-mode: normal;
 }
 
-
-/* =========================================================
-   DESKTOP
-========================================================= */
-
-@media (min-width: 1200px) {
-
-    .technology-orbit {
-        width: 720px;
-        height: 720px;
-    }
-
-    .tat-orbit-center {
-        width: 130px;
-        height: 130px;
-    }
-
-    .tat-orbit-center img {
-        width: 135px;
-        height: 95px;
-    }
-
-    .service-logo {
-        width: 115px;
-        height: 115px;
-    }
-
-    .service-logo img {
-        width: 105px;
-        height: 105px;
-    }
-
-    .orbit-web .service-logo img {
-        width: 44px;
-        height: 44px;
-    }
-
-    .orbit-react .service-logo img {
-        width: 72px;
-        height: 72px;
-    }
-
+.creative-art {
+    width: 100%;
+    height: calc(100% - 124px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    opacity: 0.95;
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 1024px) {
-
-    .technology-orbit-section {
-        min-height: 650px;
-    }
-
-    .technology-orbit {
-        width: 600px;
-        height: 600px;
-    }
-
-    .orbit-web {
-        --orbit-radius: 75px;
-    }
-
-    .orbit-aem {
-        --orbit-radius: 125px;
-    }
-
-    .orbit-react {
-        --orbit-radius: 185px;
-    }
-
-    .orbit-salesforce {
-        --orbit-radius: 245px;
-    }
-
-    .tat-orbit-center {
-        width: 125px;
-        height: 125px;
-    }
-
-    .tat-orbit-center img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .service-logo {
-        width: 90px;
-        height: 90px;
-    }
-
-    .service-logo img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .orbit-web .service-logo img {
-        width: 38px;
-        height: 38px;
-    }
-
-    .orbit-react .service-logo img {
-        width: 58px;
-        height: 58px;
-    }
-
+.creative-slide-overlay {
+    position: absolute;
+    left: clamp(18px, 4vw, 40px);
+    right: clamp(18px, 4vw, 40px);
+    bottom: clamp(42px, 6%, 58px);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #fff;
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 768px) {
-
-    .technology-orbit-section {
-        min-height: 500px;
-    }
-
-    .technology-orbit {
-        width: 430px;
-        height: 430px;
-    }
-
-    .orbit-ring-1 {
-        width: 110px;
-        height: 110px;
-    }
-
-    .orbit-ring-2 {
-        width: 180px;
-        height: 180px;
-    }
-
-    .orbit-ring-3 {
-        width: 270px;
-        height: 270px;
-    }
-
-    .orbit-ring-4 {
-        width: 350px;
-        height: 350px;
-    }
-
-    .orbit-web {
-        --orbit-radius: 55px;
-    }
-
-    .orbit-aem {
-        --orbit-radius: 90px;
-    }
-
-    .orbit-react {
-        --orbit-radius: 135px;
-    }
-
-    .orbit-salesforce {
-        --orbit-radius: 175px;
-    }
-
-    .tat-orbit-center {
-        width: 78px;
-        height: 78px;
-    }
-
-    .tat-orbit-center img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .service-logo {
-        width: 70px;
-        height: 70px;
-    }
-
-    .service-logo img {
-        width: 65px;
-        height: 65px;
-    }
+.creative-slide-overlay span {
+    color: var(--tat-gold, #daa55b);
+    font-size: clamp(15px, 1.8vw, 22px);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 480px) {
-
-    .technology-orbit-section {
-        min-height: 420px;
-    }
-
-    .technology-orbit {
-        width: 350px;
-        height: 350px;
-    }
-
-    .orbit-ring-1 {
-        width: 90px;
-        height: 90px;
-    }
-
-    .orbit-ring-2 {
-        width: 145px;
-        height: 145px;
-    }
-
-    .orbit-ring-3 {
-        width: 215px;
-        height: 215px;
-    }
-
-    .orbit-ring-4 {
-        width: 285px;
-        height: 285px;
-    }
-
-    .orbit-web {
-        --orbit-radius: 45px;
-    }
-
-    .orbit-aem {
-        --orbit-radius: 72px;
-    }
-
-    .orbit-react {
-        --orbit-radius: 108px;
-    }
-
-    .orbit-salesforce {
-        --orbit-radius: 142px;
-    }
-
-    .tat-orbit-center {
-        width: 64px;
-        height: 64px;
-    }
-
-    .tat-orbit-center img {
-        width: 42px;
-        height: 42px;
-    }
-
-    .service-logo {
-        width: 58px;
-        height: 58px;
-    }
-
-    .service-logo img {
-        width: 54px;
-        height: 54px;
-    }
-
-    .orbit-web .service-logo img {
-        width: 32px;
-        height: 32px;
-    }
-
-    .orbit-react .service-logo img {
-        width: 44px;
-        height: 44px;
-    }
-
+.creative-slide-overlay small {
+    max-width: 260px;
+    color: rgba(245, 234, 219, 0.8);
+    font-size: clamp(10px, 1.1vw, 13px);
+    letter-spacing: 0.5px;
 }
 
+.creative-carousel-controls {
+    position: absolute;
+    left: clamp(18px, 4vw, 40px);
+    right: clamp(18px, 4vw, 40px);
+    bottom: clamp(14px, 3vw, 24px);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-/* =========================================================
-   ACCESSIBILITY
-========================================================= */
+.creative-carousel-controls > button {
+    width: clamp(28px, 3vw, 38px);
+    height: clamp(28px, 3vw, 38px);
+    border: 0;
+    border-radius: 50%;
+    color: var(--tat-gold, #daa55b);
+    background: rgba(8, 16, 14, 0.72);
+    cursor: pointer;
+    transition: background 180ms ease, transform 180ms ease, color 180ms ease;
+}
+
+.creative-carousel-controls > button:hover,
+.creative-carousel-controls > button:focus-visible {
+    color: #08100e;
+    background: var(--tat-gold, #daa55b);
+    transform: scale(1.08);
+}
+
+.creative-carousel-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.creative-carousel-dots button {
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(245, 234, 219, 0.45);
+    cursor: pointer;
+    transition: transform 180ms ease, background 180ms ease;
+}
+
+.creative-carousel-dots button.is-active {
+    background: var(--tat-gold, #daa55b);
+    transform: scale(1.35);
+}
+
+@media (max-width: 700px) {
+    .technology-orbit-section { min-height: 500px; padding: 18px 0; }
+    .technology-gateway { height: clamp(430px, 124vw, 560px); }
+    .creative-carousel { width: 94%; height: 80%; }
+    .creative-art { height: calc(100% - 102px); }
+    .creative-slide-overlay { left: 18px; right: 18px; bottom: 42px; }
+    .creative-slide-overlay span { font-size: 12px; letter-spacing: 1.4px; }
+    .creative-slide-overlay small { font-size: 8px; }
+    .creative-carousel-controls { left: 18px; right: 18px; bottom: 18px; }
+    .creative-carousel-controls > button { width: 24px; height: 24px; font-size: 12px; }
+}
+
+@media (max-width: 380px) {
+    .technology-gateway { height: 390px; }
+    .creative-carousel { width: 94%; height: 76%; }
+    .creative-slide-overlay small { max-width: 210px; }
+}
 
 @media (prefers-reduced-motion: reduce) {
+    .creative-slide {
+        transition: opacity 200ms ease, visibility 200ms ease;
+    }
 
-    .tat-orbit-center img,
-    .service-orbit,
-    .service-logo {
+    .creative-slide.is-active {
         animation: none;
     }
 }

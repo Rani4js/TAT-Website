@@ -1,0 +1,9 @@
+<svg fill="none" role="img" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <title>Color palette</title>
+  <path d="M32 8C18.745 8 8 17.85 8 30c0 10.494 8.506 19 19 19h3.5c2.485 0 4.5-2.015 4.5-4.5 0-1.84-1.12-3.5-2.18-4.73-.89-1.04-.15-2.77 1.22-2.77H39c9.389 0 17-7.611 17-17C56 14.268 45.255 8 32 8Z" fill="#F2B97B"/>
+  <circle cx="20" cy="29" r="3" fill="#153B2A"/>
+  <circle cx="26" cy="19" r="3" fill="#6BB897"/>
+  <circle cx="37" cy="17" r="3" fill="#153B2A"/>
+  <circle cx="45" cy="24" r="3" fill="#6BB897"/>
+  <path d="M43 43h8M47 39v8" stroke="#6BB897" stroke-linecap="round" stroke-width="3"/>
+</svg>

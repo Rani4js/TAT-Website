@@ -85,7 +85,6 @@ const Careers = () => (
               <p>{role.description}</p>
               <span className="career-role-tags">{role.tags}</span>
             </div>
-            <a href="/contact" aria-label={`Apply for ${role.title}`}>↗</a>
           </article>
         ))}
       </div>

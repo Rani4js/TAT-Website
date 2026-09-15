@@ -196,22 +196,6 @@ const Home = () => {
 
         </div>
 
-
-        <div className="tech-marquee" aria-label="Technology stack">
-          {[
-            "REACT",
-            "AEM",
-            "SALESFORCE",
-            "DATA CLOUD",
-            "JAVASCRIPT",
-            "MARKETING CLOUD",
-          ].map((technology) => (
-            <div className="technology-card" key={technology}>
-              <span className="technology-card-name">{technology}</span>
-            </div>
-          ))}
-        </div>
-
       </section>
 
 
