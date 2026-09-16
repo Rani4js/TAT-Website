@@ -76,9 +76,10 @@ TAT_DATABASE_USER
 TAT_DATABASE_PASSWORD
 TAT_NOTIFICATION_EMAIL=support@togetherat.in
 TAT_MAIL_FROM=support@togetherat.in
+TAT_LOGO_URL=https://togetherat.in/favicon-512.png
 ```
 
-The endpoint stores the enquiry, emails the configured TAT notification inbox, and sends a confirmation containing the submitted information to the visitor. The frontend uses `VITE_CONTACT_FORM_API_URL`; when omitted, it posts to `/api/contact.php`.
+The endpoint stores the enquiry, sends a branded HTML notification containing the submitted information to the TAT inbox, and sends the visitor a branded HTML confirmation. The frontend uses `VITE_CONTACT_FORM_API_URL`; when omitted, it posts to `/api/contact.php`.
 
 If cPanel does not pass `SetEnv` values to PHP-FPM, copy
 `public/api/config.example.php` to `public/api/config.php` on the server and
