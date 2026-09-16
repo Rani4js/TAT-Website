@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Contact.css";
+import { submitContactForm } from "../lib/contactSubmission";
 
 const initialForm = {
   name: "",
@@ -12,6 +13,8 @@ const initialForm = {
 const Contact = () => {
   const [form, setForm] = useState(initialForm);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (event) => {
     setForm({
@@ -22,8 +25,19 @@ const Contact = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSubmitted(true);
-    setForm(initialForm);
+    setSubmitting(true);
+    setSubmitError("");
+    submitContactForm(form)
+      .then(() => {
+        setSubmitted(true);
+        setForm(initialForm);
+      })
+      .catch((error) => {
+        setSubmitError(error.message);
+      })
+      .finally(() => {
+        setSubmitting(false);
+      });
   };
 
   return (
@@ -140,8 +154,8 @@ const Contact = () => {
             />
           </label>
 
-          <button type="submit" className="contact-submit">
-            {submitted ? "Message ready to send" : "Send enquiry"}
+          <button type="submit" className="contact-submit" disabled={submitting}>
+            {submitting ? "Sending..." : submitted ? "Enquiry sent" : "Send enquiry"}
             <span aria-hidden="true">→</span>
           </button>
 
@@ -149,6 +163,9 @@ const Contact = () => {
             <p className="contact-success" role="status">
               Thanks — your enquiry has been captured. We&apos;ll be in touch soon.
             </p>
+          )}
+          {submitError && (
+            <p className="contact-error" role="alert">{submitError}</p>
           )}
         </form>
       </section>

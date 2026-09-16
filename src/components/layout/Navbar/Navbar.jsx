@@ -2,6 +2,7 @@ import "./Navbar.css";
 import TATLogo from "../../../assets/images/TAT.PNG"
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { submitContactForm } from "../../../lib/contactSubmission";
 function Navbar(){
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
@@ -9,6 +10,8 @@ function Navbar(){
   const isCurrentPage = (pagePath) => pathname === pagePath;
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [quoteSubmitted, setQuoteSubmitted] = useState(false);
+  const [quoteSubmitting, setQuoteSubmitting] = useState(false);
+  const [quoteSubmitError, setQuoteSubmitError] = useState("");
   const [quoteForm, setQuoteForm] = useState({
     name: "",
     email: "",
@@ -25,13 +28,24 @@ function Navbar(){
 
   const handleQuoteSubmit = (event) => {
     event.preventDefault();
-    setQuoteSubmitted(true);
-    setQuoteForm({
-      name: "",
-      email: "",
-      service: "",
-      message: "",
-    });
+    setQuoteSubmitting(true);
+    setQuoteSubmitError("");
+    submitContactForm(quoteForm)
+      .then(() => {
+        setQuoteSubmitted(true);
+        setQuoteForm({
+          name: "",
+          email: "",
+          service: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        setQuoteSubmitError(error.message);
+      })
+      .finally(() => {
+        setQuoteSubmitting(false);
+      });
   };
 
   const openQuote = () => {
@@ -153,14 +167,17 @@ function Navbar(){
             Project details *
             <textarea name="message" value={quoteForm.message} onChange={handleQuoteChange} required rows="4" placeholder="How can we help?" />
           </label>
-          <button className="quote-modal-submit" type="submit">
-            {quoteSubmitted ? "Enquiry received" : "Request a quote"}
+          <button className="quote-modal-submit" type="submit" disabled={quoteSubmitting}>
+            {quoteSubmitting ? "Sending..." : quoteSubmitted ? "Enquiry sent" : "Request a quote"}
             <span aria-hidden="true">→</span>
           </button>
           {quoteSubmitted && (
             <p className="quote-modal-success" role="status">
               Thanks — we&apos;ll be in touch soon.
             </p>
+          )}
+          {quoteSubmitError && (
+            <p className="quote-modal-error" role="alert">{quoteSubmitError}</p>
           )}
         </form>
       </section>

@@ -11,6 +11,7 @@ Responsive React website for Together Advanced Technologies (TAT), built with Vi
 - Cookie consent preferences for necessary, analytics, and marketing cookies
 - Consent-gated browser/device information storage
 - PHP/PDO endpoint and MySQL schema for browser-information storage
+- Contact enquiry API that stores submissions and emails the visitor and TAT inbox
 - Production output in `dist/`
 
 ## Requirements
@@ -57,6 +58,27 @@ VITE_BROWSER_INFO_API_URL=https://your-domain.example/api/browser-info.php
 ```
 
 Configure the database credentials, allowed origin, and table name in the PHP endpoint before uploading it to cPanel. Do not commit `.env` or database credentials.
+
+## Contact enquiry API
+
+The contact enquiry endpoint is located at:
+
+```text
+public/api/contact.php
+```
+
+Import `public/api/contact-submissions.sql` into MySQL. Configure these server environment variables in cPanel:
+
+```text
+TAT_DATABASE_HOST
+TAT_DATABASE_NAME
+TAT_DATABASE_USER
+TAT_DATABASE_PASSWORD
+TAT_NOTIFICATION_EMAIL=support@togetherat.in
+TAT_MAIL_FROM=support@togetherat.in
+```
+
+The endpoint stores the enquiry, emails the configured TAT notification inbox, and sends a confirmation containing the submitted information to the visitor. The frontend uses `VITE_CONTACT_FORM_API_URL`; when omitted, it posts to `/api/contact.php`.
 
 ## cPanel deployment
 

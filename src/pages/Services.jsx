@@ -70,7 +70,7 @@ const Services = () => (
         </p>
       </div>
       <div className="services-hero-mark" aria-hidden="true">
-        <span>06</span>
+        <span>07</span>
         <i />
         <small>CONNECTED SERVICES</small>
       </div>
