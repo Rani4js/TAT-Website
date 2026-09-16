@@ -58,21 +58,23 @@ const Home = () => {
             </p>
 
             <div className="hero-actions">
+              <span className="hero-action-hit-area">
+                <a
+                  href="/services"
+                  className="hero-primary-btn"
+                >
+                  Explore Services
+                </a>
+              </span>
 
-              <a
-                href="#services"
-                className="hero-primary-btn"
-              >
-                Explore Services
-               
-              </a>
-
-              <a
-                href="/contact"
-                className="hero-secondary-btn"
-              >
-                Start a Project
-              </a>
+              <span className="hero-action-hit-area">
+                <a
+                  href="/contact"
+                  className="hero-secondary-btn"
+                >
+                  Start a Project
+                </a>
+              </span>
 
             </div>
 

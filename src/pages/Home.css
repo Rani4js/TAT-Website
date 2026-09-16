@@ -565,6 +565,14 @@ body {
 }
 
 
+.hero-action-hit-area {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 0;
+}
+
+
 .hero-primary-btn,
 .hero-secondary-btn {
     min-height: 54px;
@@ -587,7 +595,8 @@ body {
         transform 0.3s ease,
         background 0.3s ease,
         border-color 0.3s ease,
-        color 0.3s ease;
+        color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
@@ -613,6 +622,11 @@ body {
 .hero-primary-btn:hover {
     color: var(--tat-dark);
 
+    box-shadow: 0 8px 24px rgba(217, 161, 91, 0.2);
+}
+
+.hero-action-hit-area:hover .hero-primary-btn,
+.hero-action-hit-area:hover .hero-secondary-btn {
     transform: translateY(-3px);
 }
 
@@ -636,7 +650,7 @@ body {
 
     color: var(--tat-gold);
 
-    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(217, 161, 91, 0.12);
 }
 
 
@@ -3451,6 +3465,10 @@ body {
 
     .hero-primary-btn,
     .hero-secondary-btn {
+        width: 100%;
+    }
+
+    .hero-action-hit-area {
         width: 100%;
     }
 
