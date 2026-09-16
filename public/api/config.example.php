@@ -9,5 +9,4 @@ return [
     'TAT_DATABASE_PASSWORD' => 'replace-with-the-new-password',
     'TAT_NOTIFICATION_EMAIL' => 'support@togetherat.in',
     'TAT_MAIL_FROM' => 'support@togetherat.in',
-    'TAT_LOGO_URL' => 'https://togetherat.in/favicon-512.png',
 ];

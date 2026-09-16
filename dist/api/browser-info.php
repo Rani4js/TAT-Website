@@ -19,9 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // Replace these placeholders in cPanel. Never put database credentials in React.
 $databaseHost = 'localhost';
-$databaseName = getenv('TAT_DATABASE_NAME') ?: ($_SERVER['TAT_DATABASE_NAME'] ?? '');
-$databaseUser = getenv('TAT_DATABASE_USER') ?: ($_SERVER['TAT_DATABASE_USER'] ?? '');
-$databasePassword = getenv('TAT_DATABASE_PASSWORD') ?: ($_SERVER['TAT_DATABASE_PASSWORD'] ?? '');
+$databaseName = getenv('TAT_DATABASE_NAME') ?: '';
+$databaseUser = getenv('TAT_DATABASE_USER') ?: '';
+$databasePassword = getenv('TAT_DATABASE_PASSWORD') ?: '';
 
 if ($databaseName === '' || $databaseUser === '') {
     error_log('Browser information server configuration is incomplete.');

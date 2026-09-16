@@ -8,7 +8,6 @@ SetEnv TAT_DATABASE_USER "cpanel_database_user"
 SetEnv TAT_DATABASE_PASSWORD "replace-with-your-new-password"
 SetEnv TAT_NOTIFICATION_EMAIL "support@togetherat.in"
 SetEnv TAT_MAIL_FROM "support@togetherat.in"
-SetEnv TAT_LOGO_URL "https://togetherat.in/favicon-512.png"
 
 # Do not allow direct access to local configuration or database schema files.
 <FilesMatch "^(config\.php|.*\.sql)$">
