@@ -1,0 +1,18 @@
+<svg width="760" height="720" viewBox="0 0 760 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .trail{animation:travel 3.5s linear infinite}.trail2{animation:travel 5s linear infinite reverse}.star{transform-box:fill-box;transform-origin:center;animation:pulse 2s ease-in-out infinite}.s2{animation-delay:-1s}
+    @keyframes travel{to{stroke-dashoffset:-220}}@keyframes pulse{50%{transform:scale(1.8);opacity:.35}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+  <defs>
+    <radialGradient id="a"><stop stop-color="#4CE0B2" stop-opacity=".18"/><stop offset="1" stop-opacity="0"/></radialGradient>
+    <linearGradient id="g" x1="105" y1="230" x2="650" y2="480"><stop stop-color="#9BFFE1"/><stop offset=".42" stop-color="#42D9AC"/><stop offset=".7" stop-color="#597DFF"/><stop offset="1" stop-color="#AF6AFF"/></linearGradient>
+    <filter id="glow" x="-50%" y="-80%" width="200%" height="260%"><feGaussianBlur stdDeviation="10"/></filter>
+  </defs>
+  <circle cx="380" cy="350" r="325" fill="url(#a)"/>
+  <path d="M112 350C112 202 265 202 380 350C495 498 648 498 648 350C648 202 495 202 380 350C265 498 112 498 112 350Z" stroke="url(#g)" stroke-opacity=".22" stroke-width="34" filter="url(#glow)"/>
+  <path d="M112 350C112 202 265 202 380 350C495 498 648 498 648 350C648 202 495 202 380 350C265 498 112 498 112 350Z" stroke="url(#g)" stroke-width="3" stroke-dasharray="1 11" stroke-linecap="round"/>
+  <path class="trail" d="M112 350C112 202 265 202 380 350C495 498 648 498 648 350C648 202 495 202 380 350C265 498 112 498 112 350Z" stroke="#E8FFF8" stroke-width="7" stroke-dasharray="2 18 2 18 40 138" stroke-linecap="round"/>
+  <path class="trail2" d="M112 350C112 202 265 202 380 350C495 498 648 498 648 350C648 202 495 202 380 350C265 498 112 498 112 350Z" stroke="#7D93FF" stroke-opacity=".75" stroke-width="3" stroke-dasharray="3 217" stroke-linecap="round"/>
+  <g fill="#A7FFE4"><circle class="star" cx="151" cy="180" r="4"/><circle class="star s2" cx="614" cy="177" r="5"/><circle class="star" cx="185" cy="550" r="3"/><circle class="star s2" cx="589" cy="558" r="4"/></g>
+  <g fill="#6687FF" opacity=".7"><circle cx="90" cy="288" r="2"/><circle cx="687" cy="402" r="3"/><circle cx="374" cy="112" r="2"/><circle cx="390" cy="594" r="3"/></g>
+</svg>

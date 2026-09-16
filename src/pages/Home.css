@@ -73,10 +73,7 @@ body {
 
     width: 100%;
 
-    /* Don't lock the section to exactly 100vh */
-    min-height: 100vh;
-    min-height: 100svh;
-
+    min-height: auto;
     height: auto;
 
     overflow: hidden;
@@ -218,14 +215,13 @@ body {
     width: min(94%, 1600px);
     max-width: 1600px;
 
-    min-height: 100vh;
-    min-height: 100svh;
+    min-height: auto;
 
     margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
 
     align-items: center;
 
@@ -233,7 +229,7 @@ body {
        Reserve space for SCROLL TO EXPLORE
        so it can never overlap the hero content.
     */
-    padding-bottom: 90px;
+    padding: 50px 0 70px;
 }
 
 /* =========================================================
@@ -246,14 +242,32 @@ body {
     z-index: 20;
 
     width: 100%;
+    min-width: 0;
     max-width: none;
-    height: 100%;
-    min-height: 100%;
+    height: auto;
+    min-height: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     padding-top: 10px;
+}
+
+.hero-visual {
+    position: relative;
+    z-index: 15;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-visual img {
+    width: min(100%, 620px);
+    height: auto;
+    display: block;
 }
 
 
@@ -305,6 +319,7 @@ body {
     display: flex;
 
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: baseline;
     gap: clamp(12px, 1.4vw, 24px);
 
@@ -319,7 +334,7 @@ body {
     line-height: 1;
 
     letter-spacing: -4px;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 
@@ -348,7 +363,7 @@ body {
 .hero-description {
     width: 100%;
     max-width: none;
-    white-space: nowrap;
+    white-space: normal;
 
     margin: 40px 0 30px;
 
@@ -458,7 +473,7 @@ body {
     z-index: 15;
 
     width: 100%;
-    height: 100%;
+    height: auto;
 
     display: flex;
 
@@ -517,6 +532,13 @@ body {
     pointer-events: auto;
 }
 
+@media (min-width: 901px) {
+    .hero-scroll {
+        gap: 24px;
+        bottom: 32px;
+    }
+}
+
 /* =========================================================
    SCROLL LINE
 ========================================================= */
@@ -527,7 +549,7 @@ body {
     display: block !important;
 
     width: 38px !important;
-    height: 1px !important;
+    height: 2px !important;
 
     flex: 0 0 38px;
 
@@ -2510,6 +2532,10 @@ body {
         width: 90%;
 
         grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero-visual {
+        min-height: 420px;
     }
 
 

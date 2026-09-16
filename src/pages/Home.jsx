@@ -1,4 +1,5 @@
 import "./Home.css";
+import infinityParticles from "../assets/images/infinity-particles.svg";
 import Hero from "../components/home/Hero/Hero";
 import Intro from "../components/home/Intro/Intro";
 import service from "../components/home/ServicesInteractive/ServicesInteractive";
@@ -124,6 +125,12 @@ const Home = () => {
 
           </div>
 
+          <div className="hero-visual">
+            <img
+              src={infinityParticles}
+              alt="Animated infinity loop made of flowing particles"
+            />
+          </div>
 
         </div>
 
