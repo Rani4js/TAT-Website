@@ -18,190 +18,136 @@
     isolation: isolate;
 }
 
-.creative-carousel {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: min(760px, 96%);
-    height: min(700px, 96%);
-    transform: translate(-50%, -50%);
-    overflow: hidden;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-    perspective: 1200px;
-    z-index: 1;
+.tat-logo-visual {
+    position: relative;
+    width: min(460px, 78%);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
 }
 
-.creative-slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(1.04);
-    transition: opacity 500ms ease, transform 700ms ease, visibility 500ms ease;
-    -webkit-mask-image: radial-gradient(ellipse at center, #000 42%, rgba(0, 0, 0, 0.94) 66%, transparent 100%);
-    mask-image: radial-gradient(ellipse at center, #000 42%, rgba(0, 0, 0, 0.94) 66%, transparent 100%);
-    background: transparent;
-}
-
-.creative-slide.is-active {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-    animation: carouselSpin360 900ms cubic-bezier(0.22, 0.7, 0.2, 1);
-    backface-visibility: hidden;
-}
-
-.creative-slide::before {
-    content: "";
-    position: absolute;
-    inset: 14%;
-    z-index: -1;
+.tat-logo-core {
+    position: relative;
+    z-index: 2;
+    width: 58%;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
     border-radius: 50%;
-    background: rgba(107, 184, 151, 0.2);
-    filter: blur(46px);
-    opacity: 0.75;
+    background: radial-gradient(circle, rgba(31, 95, 67, 0.8), rgba(8, 16, 14, 0.18) 70%);
+    animation: tatLogoPulse 4s ease-in-out infinite;
 }
 
-@keyframes carouselSpin360 {
-    from {
-        transform: scale(0.96) rotateY(-360deg);
-        opacity: 0;
+.tat-logo-core img {
+    width: 82%;
+    height: 82%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 18px rgba(107, 184, 151, 0.34));
+}
+
+.tat-logo-ring,
+.tat-logo-orbit {
+    position: absolute;
+    inset: 8%;
+    border: 1px solid rgba(107, 184, 151, 0.45);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.tat-logo-ring-one {
+    animation: tatRingRotate 18s linear infinite;
+}
+
+.tat-logo-ring-two {
+    inset: 17%;
+    border-color: rgba(218, 165, 91, 0.52);
+    transform: rotate(60deg) scaleX(0.52);
+    animation: tatRingRotateReverse 12s linear infinite;
+}
+
+.tat-logo-ring-three {
+    inset: 17%;
+    border-color: rgba(107, 184, 151, 0.3);
+    transform: rotate(-60deg) scaleX(0.52);
+    animation: tatRingRotate 15s linear infinite;
+}
+
+.tat-logo-orbit {
+    inset: 3%;
+    border: 0;
+    border-top: 2px solid rgba(218, 165, 91, 0.78);
+    transform: rotate(28deg) scaleY(0.4);
+    animation: tatOrbitSpin 8s linear infinite;
+}
+
+.tat-logo-orbit-two {
+    border-top-color: rgba(107, 184, 151, 0.72);
+    transform: rotate(-28deg) scaleY(0.4);
+    animation-direction: reverse;
+}
+
+@keyframes tatLogoPulse {
+    0%, 100% { transform: scale(0.96); }
+    50% { transform: scale(1.04); }
+}
+
+@keyframes tatRingRotate {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes tatRingRotateReverse {
+    to { transform: rotate(-300deg) scaleX(0.52); }
+}
+
+@keyframes tatOrbitSpin {
+    to { transform: rotate(388deg) scaleY(0.4); }
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+    .technology-orbit-section {
+        min-height: 620px;
+        padding: 10px 0 24px;
     }
 
-    65% {
-        opacity: 1;
+    .technology-gateway {
+        width: min(760px, 100%);
+        height: 620px;
     }
 
-    to {
-        transform: scale(1) rotateY(0deg);
-        opacity: 1;
+    .tat-logo-visual {
+        width: min(500px, 78%);
     }
-}
-
-.creative-slide::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse at center, transparent 48%, rgba(7, 19, 14, 0.22) 100%),
-        linear-gradient(180deg, transparent 48%, rgba(4, 12, 8, 0.38));
-    mix-blend-mode: normal;
-}
-
-.creative-art {
-    width: 100%;
-    height: calc(100% - 124px);
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    opacity: 0.95;
-}
-
-.creative-slide-overlay {
-    position: absolute;
-    left: clamp(18px, 4vw, 40px);
-    right: clamp(18px, 4vw, 40px);
-    bottom: clamp(42px, 6%, 58px);
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    color: #fff;
-}
-
-.creative-slide-overlay span {
-    color: var(--tat-gold, #daa55b);
-    font-size: clamp(15px, 1.8vw, 22px);
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.creative-slide-overlay small {
-    max-width: 260px;
-    color: rgba(245, 234, 219, 0.8);
-    font-size: clamp(10px, 1.1vw, 13px);
-    letter-spacing: 0.5px;
-}
-
-.creative-carousel-controls {
-    position: absolute;
-    left: clamp(18px, 4vw, 40px);
-    right: clamp(18px, 4vw, 40px);
-    bottom: clamp(14px, 3vw, 24px);
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.creative-carousel-controls > button {
-    width: clamp(28px, 3vw, 38px);
-    height: clamp(28px, 3vw, 38px);
-    border: 0;
-    border-radius: 50%;
-    color: var(--tat-gold, #daa55b);
-    background: rgba(8, 16, 14, 0.72);
-    cursor: pointer;
-    transition: background 180ms ease, transform 180ms ease, color 180ms ease;
-}
-
-.creative-carousel-controls > button:hover,
-.creative-carousel-controls > button:focus-visible {
-    color: #08100e;
-    background: var(--tat-gold, #daa55b);
-    transform: scale(1.08);
-}
-
-.creative-carousel-dots {
-    display: flex;
-    gap: 6px;
-}
-
-.creative-carousel-dots button {
-    width: 6px;
-    height: 6px;
-    padding: 0;
-    border: 0;
-    border-radius: 50%;
-    background: rgba(245, 234, 219, 0.45);
-    cursor: pointer;
-    transition: transform 180ms ease, background 180ms ease;
-}
-
-.creative-carousel-dots button.is-active {
-    background: var(--tat-gold, #daa55b);
-    transform: scale(1.35);
 }
 
 @media (max-width: 700px) {
-    .technology-orbit-section { min-height: 500px; padding: 18px 0; }
-    .technology-gateway { height: clamp(430px, 124vw, 560px); }
-    .creative-carousel { width: 94%; height: 80%; }
-    .creative-art { height: calc(100% - 102px); }
-    .creative-slide-overlay { left: 18px; right: 18px; bottom: 42px; }
-    .creative-slide-overlay span { font-size: 12px; letter-spacing: 1.4px; }
-    .creative-slide-overlay small { font-size: 8px; }
-    .creative-carousel-controls { left: 18px; right: 18px; bottom: 18px; }
-    .creative-carousel-controls > button { width: 24px; height: 24px; font-size: 12px; }
+    .technology-orbit-section {
+        min-height: 500px;
+        padding: 18px 0;
+    }
+
+    .technology-gateway {
+        height: clamp(430px, 124vw, 560px);
+    }
+
+    .tat-logo-visual {
+        width: min(390px, 82%);
+    }
 }
 
 @media (max-width: 380px) {
-    .technology-gateway { height: 390px; }
-    .creative-carousel { width: 94%; height: 76%; }
-    .creative-slide-overlay small { max-width: 210px; }
+    .technology-gateway {
+        height: 390px;
+    }
+
+    .tat-logo-visual {
+        width: min(320px, 86%);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .creative-slide {
-        transition: opacity 200ms ease, visibility 200ms ease;
-    }
-
-    .creative-slide.is-active {
+    .tat-logo-core,
+    .tat-logo-ring,
+    .tat-logo-orbit {
         animation: none;
     }
 }

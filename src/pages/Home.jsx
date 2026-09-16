@@ -1,7 +1,5 @@
 import "./Home.css";
-import TATLogo from "../assets/images/TAT.PNG";
 import Hero from "../components/home/Hero/Hero";
-import Orbit from "../components/home/OrbitServices/Orbit";
 import Intro from "../components/home/Intro/Intro";
 import service from "../components/home/ServicesInteractive/ServicesInteractive";
 import ServicesScroll from "../components/home/ServiceScroll/ServiceScroll";
@@ -76,7 +74,6 @@ const Home = () => {
 
         <div className="hero-container">
 
-          {/* LEFT CONTENT */}
           <div className="hero-content">
 
             <div className="hero-eyebrow">
@@ -127,13 +124,6 @@ const Home = () => {
 
           </div>
 
-
-          {/* RIGHT ORBIT */}
-          <div className="hero-visual">
-
-            <Orbit />
-
-          </div>
 
         </div>
 
