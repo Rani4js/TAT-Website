@@ -80,6 +80,16 @@ TAT_MAIL_FROM=support@togetherat.in
 
 The endpoint stores the enquiry, emails the configured TAT notification inbox, and sends a confirmation containing the submitted information to the visitor. The frontend uses `VITE_CONTACT_FORM_API_URL`; when omitted, it posts to `/api/contact.php`.
 
+If cPanel does not pass `SetEnv` values to PHP-FPM, copy
+`public/api/config.example.php` to `public/api/config.php` on the server and
+replace its placeholders. `config.php` is ignored by Git and must never be
+committed. Keep it outside `public_html` when the hosting plan allows it.
+
+To configure the API with Apache `.htaccess`, upload
+`dist/api/.htaccess` as `public_html/api/.htaccess`, then replace the
+placeholder values in its `SetEnv` directives. The API reads those values with
+`getenv()`. Do not add backslashes before underscores in variable names.
+
 ## cPanel deployment
 
 1. Run `npm run build`.

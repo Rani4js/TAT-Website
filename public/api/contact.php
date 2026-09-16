@@ -1,8 +1,22 @@
 <?php
 declare(strict_types=1);
 
+$configFile = __DIR__ . '/config.php';
+$config = is_file($configFile) ? require $configFile : [];
+$config = is_array($config) ? $config : [];
+
+$allowedOrigins = [
+    'https://togetherat.in',
+    'https://www.togetherat.in',
+    'http://localhost:5173',
+];
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+if (in_array($origin, $allowedOrigins, true)) {
+    header('Access-Control-Allow-Origin: ' . $origin);
+    header('Vary: Origin');
+}
+
 header('Content-Type: application/json; charset=utf-8');
-header('Access-Control-Allow-Origin: https://togetherat.in');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
@@ -41,17 +55,28 @@ if ($name === '' || $service === '' || $message === '' || !filter_var($email, FI
     exit;
 }
 
-$databaseHost = getenv('TAT_DATABASE_HOST') ?: 'localhost';
-$databaseName = getenv('TAT_DATABASE_NAME') ?: '';
-$databaseUser = getenv('TAT_DATABASE_USER') ?: '';
-$databasePassword = getenv('TAT_DATABASE_PASSWORD') ?: '';
-$notificationEmail = getenv('TAT_NOTIFICATION_EMAIL') ?: 'support@togetherat.in';
-$mailFrom = getenv('TAT_MAIL_FROM') ?: $notificationEmail;
+$setting = static function (string $name, array $config, string $default = ''): string {
+    if (isset($config[$name]) && $config[$name] !== '') {
+        return (string) $config[$name];
+    }
 
-if ($databaseName === '' || $databaseUser === '' || !filter_var($notificationEmail, FILTER_VALIDATE_EMAIL)) {
+    $environmentValue = getenv($name);
+    return $environmentValue !== false && $environmentValue !== ''
+        ? (string) $environmentValue
+        : $default;
+};
+
+$databaseHost = $setting('TAT_DATABASE_HOST', $config, 'localhost');
+$databaseName = $setting('TAT_DATABASE_NAME', $config);
+$databaseUser = $setting('TAT_DATABASE_USER', $config);
+$databasePassword = $setting('TAT_DATABASE_PASSWORD', $config);
+$notificationEmail = $setting('TAT_NOTIFICATION_EMAIL', $config, 'support@togetherat.in');
+$mailFrom = $setting('TAT_MAIL_FROM', $config, $notificationEmail);
+
+if ($databaseName === '' || $databaseUser === '' || !filter_var($notificationEmail, FILTER_VALIDATE_EMAIL) || !function_exists('mail')) {
     error_log('Contact form server configuration is incomplete.');
     http_response_code(500);
-    echo json_encode(['error' => 'The enquiry service is not configured']);
+    echo json_encode(['error' => 'The enquiry service is not configured on the server']);
     exit;
 }
 
@@ -133,11 +158,15 @@ try {
     if (!$internalSent || !$userSent) {
         error_log('Contact form email delivery failed.');
         http_response_code(502);
-        echo json_encode(['error' => 'Your enquiry was saved, but the confirmation email could not be sent']);
+        echo json_encode(['error' => 'Your enquiry was saved, but the email service is not enabled']);
         exit;
     }
 
     echo json_encode(['success' => true]);
+} catch (PDOException $error) {
+    error_log('Contact form database error: ' . $error->getMessage());
+    http_response_code(500);
+    echo json_encode(['error' => 'The enquiry database is not configured correctly']);
 } catch (Throwable $error) {
     error_log($error->getMessage());
     http_response_code(500);

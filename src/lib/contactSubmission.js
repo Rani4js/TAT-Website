@@ -14,7 +14,9 @@ export const submitContactForm = async (form) => {
   try {
     result = await response.json();
   } catch {
-    result = {};
+    throw new Error(
+      "The enquiry service returned an invalid response. Check that the PHP API URL is configured and deployed."
+    );
   }
 
   if (!response.ok || !result.success) {

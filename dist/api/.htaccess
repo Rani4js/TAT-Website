@@ -1,0 +1,15 @@
+# Copy this file to public_html/api/.htaccess when deploying.
+# Replace the database placeholders with the values from cPanel.
+# Never commit a real database password to Git.
+
+SetEnv TAT_DATABASE_HOST "localhost"
+SetEnv TAT_DATABASE_NAME "cpanel_database_name"
+SetEnv TAT_DATABASE_USER "cpanel_database_user"
+SetEnv TAT_DATABASE_PASSWORD "replace-with-your-new-password"
+SetEnv TAT_NOTIFICATION_EMAIL "support@togetherat.in"
+SetEnv TAT_MAIL_FROM "support@togetherat.in"
+
+# Do not allow direct access to local configuration or database schema files.
+<FilesMatch "^(config\.php|.*\.sql)$">
+    Require all denied
+</FilesMatch>
