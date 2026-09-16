@@ -63,11 +63,11 @@ function Navbar(){
       </ul>
     </nav>
 
-    {/* Desktop Get Quote */}
+    {/* Desktop Let's Talk */}
     {showQuote && (
       <div className="quote-wrapper">
         <button className="get-quote-btn" type="button" onClick={openQuote}>
-          <span>Get Quote</span>
+          <span>Let's Talk</span>
 
           <svg
             className="ribbon"
@@ -83,6 +83,9 @@ function Navbar(){
     {/* Mobile hamburger */}
     <button
       className="mobile-menu-btn"
+      type="button"
+      aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+      aria-expanded={menuOpen}
       onClick={() => setMenuOpen(!menuOpen)}
     >
       {menuOpen ? "✕" : "☰"}
@@ -102,7 +105,7 @@ function Navbar(){
 
         {showQuote && (
           <button className="mobile-quote-cta" type="button" onClick={openQuote}>
-            Get Quote
+            Let's Talk
           </button>
         )}
       </ul>
@@ -140,9 +143,10 @@ function Navbar(){
               <option>Web Design</option>
               <option>Email Marketing</option>
               <option>Salesforce</option>
-              <option>AEM Sites</option>
+              <option>AEM Development</option>
               <option>React Apps</option>
-              <option>Data Cloud</option>
+              <option>Application Maintenance &amp; Support</option>
+              <option>Technical Staffing &amp; Support</option>
             </select>
           </label>
           <label>

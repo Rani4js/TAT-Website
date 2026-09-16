@@ -21,6 +21,12 @@ const roles = [
   },
 ];
 
+const candidateExperience = [
+  ["Learn continuously", "Work across design, development, platforms and data while building skills that stay relevant."],
+  ["Work with trust", "Own your craft, share your point of view and collaborate with people who value thoughtful delivery."],
+  ["Grow with purpose", "Take on meaningful problems and see how your contribution creates progress for real teams."],
+];
+
 const Careers = () => (
   <main className="careers-page">
     <section className="careers-hero">
@@ -71,6 +77,21 @@ const Careers = () => (
       </div>
     </section>
 
+    <section className="careers-experience">
+      <div className="careers-section-heading">
+        <span className="careers-eyebrow">THE TAT EXPERIENCE</span>
+        <h2>Bring your best.<span>Build what matters.</span></h2>
+      </div>
+      <div className="careers-experience-grid">
+        {candidateExperience.map(([title, text]) => (
+          <article key={title}>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
     <section className="careers-roles" id="open-roles">
       <div className="careers-section-heading">
         <span className="careers-eyebrow">OPEN POSITIONS</span>
@@ -88,6 +109,18 @@ const Careers = () => (
           </article>
         ))}
       </div>
+    </section>
+
+    <section className="careers-process">
+      <div>
+        <span className="careers-eyebrow">WHAT TO EXPECT</span>
+        <h2>A clear path from <span>hello to here.</span></h2>
+      </div>
+      <ol>
+        <li><strong>01</strong><span>Meet the team</span></li>
+        <li><strong>02</strong><span>Share your perspective</span></li>
+        <li><strong>03</strong><span>Find the right fit</span></li>
+      </ol>
     </section>
 
     <section className="careers-cta">

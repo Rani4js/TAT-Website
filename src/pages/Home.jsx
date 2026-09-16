@@ -1,60 +1,13 @@
 import "./Home.css";
-import infinityParticles from "../assets/images/infinity-particles.svg";
-import Hero from "../components/home/Hero/Hero";
-import Intro from "../components/home/Intro/Intro";
-import service from "../components/home/ServicesInteractive/ServicesInteractive";
-import ServicesScroll from "../components/home/ServiceScroll/ServiceScroll";
+import ServicesConstellation from "../components/home/ServiceScroll/ServiceScroll";
 
-
-const services = [
-  {
-    number: "01",
-    title: "Web Design",
-    description:
-      "Modern, responsive websites designed to create a strong digital presence for your business.",
-    tech: "UI / UX • HTML • CSS • JavaScript",
-    icon: "◎",
-  },
-  {
-    number: "02",
-    title: "Email Marketing",
-    description:
-      "Personalized email experiences that connect your brand with the right audience.",
-    tech: "SFMC • Automation • Campaigns",
-    icon: "✉",
-  },
-  {
-    number: "03",
-    title: "Salesforce",
-    description:
-      "Customer-focused Salesforce solutions that streamline marketing and business operations.",
-    tech: "Marketing Cloud • Data Cloud • CRM",
-    icon: "☁",
-  },
-  {
-    number: "04",
-    title: "AEM Sites",
-    description:
-      "Enterprise digital experiences built with Adobe Experience Manager.",
-    tech: "AEM • Components • Content",
-    icon: "▱",
-  },
-  {
-    number: "05",
-    title: "React Apps",
-    description:
-      "Fast, scalable React applications built for modern digital experiences.",
-    tech: "React • JavaScript • APIs",
-    icon: "⚛",
-  },
-  {
-    number: "06",
-    title: "Data Cloud",
-    description:
-      "Connected customer data solutions that turn information into actionable insights.",
-    tech: "Data Cloud • CDP • Customer Data",
-    icon: "◉",
-  },
+const testimonials = [
+  ["TAT helped us turn a complex digital challenge into a clear, connected roadmap our whole team could act on.", "Digital transformation lead"],
+  ["The team brought design, development and customer data into one experience that finally feels consistent.", "Marketing director"],
+  ["Practical thinking, thoughtful execution and a platform we can keep building on as the business grows.", "Product owner"],
+  ["They gave our team the confidence to make better decisions without slowing down the work that mattered most.", "Customer experience director"],
+  ["The result is a digital foundation that feels simpler for our customers and stronger for everyone behind it.", "Operations lead"],
+  ["TAT brought the right questions, the right specialists and a clear sense of momentum from the first conversation.", "Technology partner"],
 ];
 
 const Home = () => {
@@ -126,26 +79,11 @@ const Home = () => {
           </div>
 
           <div className="hero-visual">
-            <img
-              src={infinityParticles}
-              alt="Animated infinity loop made of flowing particles"
-            />
+            <ServicesConstellation />
           </div>
 
         </div>
 
-
-        {/* SCROLL INDICATOR */}
-        <a
-          href="#services"
-          className="hero-scroll"
-        >
-          <span className="scroll-line"></span>
-
-          <span>
-            SCROLL TO EXPLORE
-          </span>
-        </a>
 
       </section>
      
@@ -155,53 +93,15 @@ const Home = () => {
       {/* =====================================================
           SERVICES
       ===================================================== */}
-       <ServicesScroll />
+       {/* Services constellation moved to the dedicated Services page. */}
       
-             {/* ================= TECHNOLOGY ================= */}
-
-      <section className="technology-section">
-
-        <div className="section-number">
-          TECHNOLOGY ECOSYSTEM
-        </div>
-
-        <div className="technology-layout">
-
-          <div className="technology-heading">
-
-            <h2>
-              One ecosystem.
-              <span>Multiple possibilities.</span>
-            </h2>
-
-          </div>
-
-          <div className="technology-copy">
-
-            <p>
-              Your technology stack should work as one connected system.
-              We bring together modern frontend development, enterprise
-              platforms, marketing automation and customer data.
-            </p>
-
-            <a href="/services" className="text-link">
-              Explore our capabilities
-              <span>→</span>
-            </a>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
       {/* ================= PROCESS ================= */}
 
       <section className="process-section">
 
-        <div className="section-number">
-          OUR PROCESS
+        <div className="home-story-label">
+          <span className="section-number">OUR PROCESS</span>
+          <span className="home-story-line"></span>
         </div>
 
         <h2>
@@ -251,6 +151,100 @@ const Home = () => {
 
         </div>
 
+      </section>
+
+      <section className="home-principles">
+        <div className="home-section-heading">
+          <span className="section-number">WHAT GUIDES US</span>
+          <h2>Make it <span>matter.</span></h2>
+        </div>
+        <div className="home-principle-grid">
+          <article>
+            <h3>Clarity over noise</h3>
+            <p>We make complex technology easier to understand, use and improve.</p>
+          </article>
+          <article>
+            <h3>People at the centre</h3>
+            <p>The best digital experiences begin with empathy for the people using them.</p>
+          </article>
+          <article>
+            <h3>Built to move forward</h3>
+            <p>We create flexible foundations that keep working as your business grows.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="home-impact">
+        <div className="home-impact-intro">
+          <span className="section-number">CLIENT IMPACT</span>
+          <h2>Technology that creates <span>momentum.</span></h2>
+          <p>
+            We connect the right people, platforms and ideas to help ambitious
+            teams move from a good intention to measurable progress.
+          </p>
+        </div>
+        <div className="home-impact-grid">
+          <article>
+            <h3>Clearer experiences</h3>
+            <p>Make every interaction easier to understand, navigate and trust.</p>
+          </article>
+          <article>
+            <h3>Connected systems</h3>
+            <p>Bring content, campaigns, platforms and customer data into one flow.</p>
+          </article>
+          <article>
+            <h3>Room to grow</h3>
+            <p>Build flexible foundations that continue to support the next stage.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="home-story">
+        <div className="home-story-label">
+          <span className="section-number">OUR STORY</span>
+          <span className="home-story-line"></span>
+        </div>
+        <div className="home-story-content">
+          <h2>
+            Different disciplines.
+            <span>One direction.</span>
+          </h2>
+          <p>
+            Design, development, marketing and data often live in separate
+            places. We bring them together so every decision supports the same
+            customer, the same story and the same outcome.
+          </p>
+          <p>
+            From a sharper brand experience to a connected marketing ecosystem,
+            we work alongside your team to make progress feel practical and
+            measurable.
+          </p>
+        </div>
+      </section>
+
+      <section className="home-testimonials">
+        <div className="home-testimonials-heading">
+          <span className="section-number">CLIENT PERSPECTIVES</span>
+          <h2>Built together.<span>Measured by impact.</span></h2>
+        </div>
+        <div className="home-testimonials-grid">
+          <div className="home-testimonials-track">
+            {[false, true].map((isDuplicate, groupIndex) => (
+              <div
+                className="home-testimonials-group"
+                key={groupIndex}
+                aria-hidden={isDuplicate}
+              >
+                {testimonials.map(([quote, role]) => (
+                  <article key={role}>
+                    <p>“{quote}”</p>
+                    <strong>{role}</strong>
+                  </article>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
 {/* =====================================================

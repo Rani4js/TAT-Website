@@ -5,7 +5,8 @@ import {
   Cloud,
   Layers,
   Atom,
-  Database
+  Wrench,
+  UsersRound
 } from "lucide-react";
 
 const services = [
@@ -30,12 +31,12 @@ const services = [
     title: "Salesforce",
     description:
       "Customer-focused Salesforce solutions that streamline marketing and business operations.",
-    technologies: "Marketing Cloud · Data Cloud · CRM",
+    technologies:     "Marketing Cloud · CRM · Automation",
     icon: Cloud,
   },
   {
     number: "04",
-    title: "AEM Sites",
+    title: "AEM Development",
     description:
       "Scalable Adobe Experience Manager websites built for enterprise digital experiences.",
     technologies: "AEM · Components · Content Authoring",
@@ -51,11 +52,19 @@ const services = [
   },
   {
     number: "06",
-    title: "Data Cloud",
+    title: "Application Maintenance & Support",
     description:
-      "Connected customer data solutions that turn fragmented information into actionable insights.",
-    technologies: "Data Cloud · DMO · Data Streams",
-    icon: Database,
+      "Reliable maintenance and support that keeps digital products stable, secure and improving.",
+    technologies: "Monitoring · Updates · Improvements",
+    icon: Wrench,
+  },
+  {
+    number: "07",
+    title: "Technical Staffing & Support",
+    description:
+      "Experienced technical specialists who extend your team with focused expertise and dependable delivery support.",
+    technologies: "Engineering · QA · Delivery",
+    icon: UsersRound,
   },
 ];
 

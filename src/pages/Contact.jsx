@@ -120,9 +120,10 @@ const Contact = () => {
                 <option>Web Design</option>
                 <option>Email Marketing</option>
                 <option>Salesforce</option>
-                <option>AEM Sites</option>
+                <option>AEM Development</option>
                 <option>React Apps</option>
-                <option>Data Cloud</option>
+                <option>Application Maintenance &amp; Support</option>
+                <option>Technical Staffing &amp; Support</option>
               </select>
             </label>
           </div>
@@ -150,6 +151,36 @@ const Contact = () => {
             </p>
           )}
         </form>
+      </section>
+
+      <section className="contact-next-steps">
+        <div>
+          <span className="contact-eyebrow">WHAT HAPPENS NEXT</span>
+          <h2>A simple first step.<span>A useful conversation.</span></h2>
+        </div>
+        <div className="contact-next-steps-list">
+          <article>
+            <strong>01</strong>
+            <div>
+              <h3>We read the brief</h3>
+              <p>We take time to understand the challenge, context and outcome you have in mind.</p>
+            </div>
+          </article>
+          <article>
+            <strong>02</strong>
+            <div>
+              <h3>We find the opportunity</h3>
+              <p>We come back with focused questions and practical ideas for moving forward.</p>
+            </div>
+          </article>
+          <article>
+            <strong>03</strong>
+            <div>
+              <h3>We make a plan</h3>
+              <p>If the fit is right, we shape the next step around your team, timeline and priorities.</p>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
   );

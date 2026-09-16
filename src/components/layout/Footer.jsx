@@ -71,7 +71,7 @@ const Footer = () => {
                 </a>
 
                 <a href="/services">
-                    AEM Sites
+                    AEM Development
                 </a>
 
                 <a href="/services">
@@ -79,7 +79,11 @@ const Footer = () => {
                 </a>
 
                 <a href="/services">
-                    Data Cloud
+                    Application Maintenance &amp; Support
+                </a>
+
+                <a href="/services">
+                    Technical Staffing &amp; Support
                 </a>
 
             </div>
@@ -103,7 +107,7 @@ const Footer = () => {
 
                 <span>Marketing Cloud</span>
 
-                <span>Data Cloud</span>
+                <span>Application Support</span>
 
             </div>
 

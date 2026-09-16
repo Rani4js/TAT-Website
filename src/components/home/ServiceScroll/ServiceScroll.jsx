@@ -25,13 +25,13 @@ const services = [
     title: "Salesforce",
     description:
       "Customer-focused Salesforce solutions that streamline marketing and business operations.",
-    tech: "Marketing Cloud • Data Cloud • CRM",
+    tech:     "Marketing Cloud • CRM • Automation",
     icon: "☁",
     className: "node-salesforce",
   },
   {
     number: "04",
-    title: "AEM Sites",
+    title: "AEM Development",
     description:
       "Enterprise digital experiences built with Adobe Experience Manager.",
     tech: "AEM • Components • Content",
@@ -49,10 +49,10 @@ const services = [
   },
   {
     number: "06",
-    title: "Data Cloud",
+    title: "Application Support",
     description:
-      "Connected customer data solutions that turn information into actionable insights.",
-    tech: "Data Cloud • CDP • Customer Data",
+      "Reliable maintenance and support that keeps digital products stable, secure and improving.",
+    tech: "Monitoring • Updates • Improvements",
     icon: "◉",
     className: "node-data",
   },
@@ -188,10 +188,6 @@ const ServicesConstellation = () => {
           <div className="constellation-center">
 
             <div className="center-orbit"></div>
-
-            <span className="center-number">
-              {activeService.number} / 06
-            </span>
 
             <div className="center-icon">
               {activeService.icon}

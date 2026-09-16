@@ -1,28 +1,16 @@
 import "./About.css";
 
-const principles = [
-  {
-    number: "01",
-    title: "Clarity over noise",
-    text: "We make complex technology easier to understand, use and improve.",
-  },
-  {
-    number: "02",
-    title: "People at the centre",
-    text: "The best digital experiences begin with empathy for the people using them.",
-  },
-  {
-    number: "03",
-    title: "Built to move forward",
-    text: "We create flexible foundations that keep working as your business grows.",
-  },
-];
-
 const capabilities = [
   ["Strategy", "Finding the clearest path from a business challenge to a useful digital direction."],
   ["Experience", "Designing journeys that feel considered, intuitive and unmistakably yours."],
   ["Technology", "Building dependable platforms that perform today and adapt tomorrow."],
   ["Growth", "Connecting content, campaigns and data to create momentum you can measure."],
+];
+
+const approach = [
+  ["Listen first", "We start with the context behind the brief: the people, constraints and opportunities that shape the right solution."],
+  ["Make it useful", "Every idea should make a real experience clearer, faster or more valuable for the people using it."],
+  ["Keep it moving", "We build momentum through practical steps, open collaboration and foundations that can evolve with you."],
 ];
 
 const About = () => (
@@ -68,19 +56,48 @@ const About = () => (
       </div>
     </section>
 
-    <section className="about-principles">
-      <div className="about-section-heading">
-        <span className="about-eyebrow">WHAT GUIDES US</span>
-        <h2>Make it <span>matter.</span></h2>
+    <section className="about-approach">
+      <div className="about-section-label">
+        <span className="about-eyebrow">HOW WE WORK</span>
+        <span className="about-section-line" />
       </div>
-      <div className="about-principle-grid">
-        {principles.map((principle) => (
-          <article key={principle.number}>
-            <strong>{principle.number}</strong>
-            <h3>{principle.title}</h3>
-            <p>{principle.text}</p>
+      <div className="about-approach-intro">
+        <h2>Good work starts with <span>good questions.</span></h2>
+        <p>
+          We bring curiosity, craft and commercial thinking to every
+          engagement. That means fewer handoffs, better conversations and
+          digital work that has a clear reason to exist.
+        </p>
+      </div>
+      <div className="about-approach-grid">
+        {approach.map(([title, text]) => (
+          <article key={title}>
+            <h3>{title}</h3>
+            <p>{text}</p>
           </article>
         ))}
+      </div>
+    </section>
+
+    <section className="about-technology">
+      <div className="about-section-label">
+        <span className="about-eyebrow">TECHNOLOGY ECOSYSTEM</span>
+        <span className="about-section-line" />
+      </div>
+      <div className="about-technology-layout">
+        <div>
+          <h2>One ecosystem.<span>Multiple possibilities.</span></h2>
+        </div>
+        <div className="about-technology-copy">
+          <p>
+            Your technology stack should work as one connected system. We
+            bring together modern frontend development, enterprise platforms,
+            marketing automation and customer data.
+          </p>
+          <a href="/services">
+            Explore our capabilities <span>→</span>
+          </a>
+        </div>
       </div>
     </section>
 
