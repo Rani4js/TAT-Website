@@ -47,7 +47,7 @@ const SEO = () => {
   const metadata = pageMetadata[pathname] || pageMetadata["/"];
   const title = `${metadata.title} | ${siteName}`;
   const canonicalUrl = `${siteUrl}${pathname === "/" ? "/" : pathname}`;
-  const imageUrl = `${siteUrl}/favicon-512.png`;
+  const imageUrl = `${siteUrl}/TAT-Logo.png`;
 
   const structuredData = {
     "@context": "https://schema.org",
