@@ -20,11 +20,11 @@ const pageMetadata = {
       "about TAT, digital technology company, digital transformation partner, technology consulting, product development",
   },
   "/services": {
-    title: "Digital Design, Development and Technology Services",
+    title: "Salesforce, AEM & React Development Services",
     description:
-      "Explore TAT services across web design, React apps, AEM development, Salesforce, marketing, application support and technical staffing.",
+      "TAT delivers Salesforce Marketing Cloud, Data Cloud, Sales Cloud and Service Cloud solutions, AEM sites and authoring, web design, React app development, UI engineering and digital marketing.",
     keywords:
-      "web design services, React development, AEM development, Salesforce services, marketing technology, application maintenance, technical staffing",
+      "Salesforce Marketing Cloud, Salesforce Data Cloud, Salesforce Sales Cloud, Salesforce Service Cloud, Salesforce, web design, frontend development, UI development, email marketing, digital marketing, AEM Sites, AEM authoring, AEM development, app development, ReactJS apps, React routing, Redux, component development",
   },
   "/careers": {
     title: "Careers at Together Advanced Technologies",
