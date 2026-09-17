@@ -6,7 +6,8 @@ const siteUrl = "https://togetherat.in";
 
 const pageMetadata = {
   "/": {
-    title: "Digital Technology Partner for What's Next",
+    title:
+      "Together Advanced Technologies | design, development, marketing and data to build digital experiences",
     description:
       "Together Advanced Technologies connects design, development, marketing and data to build digital experiences that move businesses forward.",
     keywords:
@@ -45,7 +46,7 @@ const pageMetadata = {
 const SEO = () => {
   const { pathname } = useLocation();
   const metadata = pageMetadata[pathname] || pageMetadata["/"];
-  const title = `${metadata.title} | ${siteName}`;
+  const title = pathname === "/" ? metadata.title : `${metadata.title} | ${siteName}`;
   const canonicalUrl = `${siteUrl}${pathname === "/" ? "/" : pathname}`;
   const imageUrl = `${siteUrl}/TAT-Logo.png`;
 
