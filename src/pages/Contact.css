@@ -144,7 +144,7 @@
 
 .contact-details h2 {
   max-width: 560px;
-  font-size: clamp(48px, 5vw, 78px);
+  font-size: clamp(42px, 4.5vw, 68px);
 }
 
 .contact-details > p {
@@ -313,7 +313,7 @@
 .contact-next-steps h2 {
   margin: 24px 0 0;
   color: var(--tat-text);
-  font-size: clamp(44px, 5vw, 76px);
+  font-size: clamp(40px, 4.5vw, 68px);
   font-weight: 600;
   line-height: 0.95;
   letter-spacing: -4px;
@@ -450,5 +450,15 @@
 
   .contact-form-row {
     gap: 0;
+  }
+}
+
+.contact-page h2 {
+  letter-spacing: -2px;
+}
+
+@media (max-width: 520px) {
+  .contact-page h2 {
+    letter-spacing: -1px;
   }
 }

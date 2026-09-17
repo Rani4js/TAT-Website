@@ -72,7 +72,8 @@
 .legal-content h2 {
   margin: 0 0 14px;
   color: var(--tat-text);
-  font-size: 28px;
+  font-size: 24px;
+  letter-spacing: 0;
 }
 
 .legal-content p,

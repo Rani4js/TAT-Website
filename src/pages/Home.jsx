@@ -107,7 +107,7 @@ const Home = () => {
         </div>
 
         <h2>
-          From idea
+          From idea{' '}
           <span>to impact.</span>
         </h2>
 
@@ -162,14 +162,34 @@ const Home = () => {
         </div>
         <div className="home-principle-grid">
           <article>
+            <span className="home-principle-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <circle cx="10.5" cy="10.5" r="6.5" />
+                <path d="m16 16 5 5" />
+              </svg>
+            </span>
             <h3>Clarity over noise</h3>
             <p>We make complex technology easier to understand, use and improve.</p>
           </article>
           <article>
+            <span className="home-principle-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <circle cx="9" cy="8" r="3" />
+                <circle cx="17" cy="9" r="2.5" />
+                <path d="M3.5 19c.6-3 2.4-4.5 5.5-4.5s4.9 1.5 5.5 4.5" />
+                <path d="M14.5 14.5c2.8-.4 4.9 1 5.5 3.5" />
+              </svg>
+            </span>
             <h3>People at the centre</h3>
             <p>The best digital experiences begin with empathy for the people using them.</p>
           </article>
           <article>
+            <span className="home-principle-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <path d="M9.7 3.5h4.6l.7 2.2a7.6 7.6 0 0 1 1.7 1l2.2-.7 2.3 4-1.6 1.6a7.6 7.6 0 0 1 0 2l1.6 1.6-2.3 4-2.2-.7a7.6 7.6 0 0 1-1.7 1l-.7 2.2H9.7L9 19.5a7.6 7.6 0 0 1-1.7-1l-2.2.7-2.3-4 1.6-1.6a7.6 7.6 0 0 1 0-2L2.8 10l2.3-4 2.2.7a7.6 7.6 0 0 1 1.7-1Z" />
+                <circle cx="12" cy="12" r="2.7" />
+              </svg>
+            </span>
             <h3>Built to move forward</h3>
             <p>We create flexible foundations that keep working as your business grows.</p>
           </article>

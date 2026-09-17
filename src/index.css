@@ -73,3 +73,18 @@ body{
       flex-direction: column;
     } 
 }
+ .skip-link {
+   position: fixed;
+   top: 8px;
+   left: 8px;
+   z-index: 1000;
+   padding: 10px 14px;
+   color: var(--tat-teal);
+   background: var(--tat-gold);
+   transform: translateY(-150%);
+   transition: transform 0.2s ease;
+ }
+
+ .skip-link:focus {
+   transform: translateY(0);
+ }

@@ -59,15 +59,15 @@ function Navbar(){
   <div className="navbar-container">
 
     {/* Logo */}
-    <div className="navbar-logo">
+    <a className="navbar-logo" href="/" aria-label="Together Advanced Technologies home">
       <img
         src={TATLogo}
         alt="Together Advanced Technologies"
       />
-    </div>
+    </a>
 
     {/* Desktop Navigation */}
-    <nav className="desktop-nav">
+    <nav className="desktop-nav" aria-label="Primary navigation">
       <ul>
         {!isCurrentPage("/") && <li><a href="/">Home</a></li>}
         {!isCurrentPage("/about") && <li><a href="/about">About</a></li>}
@@ -109,7 +109,7 @@ function Navbar(){
 
   {/* Mobile menu */}
   {menuOpen && (
-    <div className="mobile-menu">
+    <nav className="mobile-menu" aria-label="Mobile navigation">
       <ul>
         {!isCurrentPage("/") && <li><a href="/">Home</a></li>}
         {!isCurrentPage("/about") && <li><a href="/about">About</a></li>}
@@ -123,7 +123,7 @@ function Navbar(){
           </button>
         )}
       </ul>
-    </div>
+    </nav>
   )}
 
   {quoteOpen && (

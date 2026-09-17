@@ -2,7 +2,7 @@ import TATLogo from "../../assets/TAT-Logo.png";
 const Footer = () => {
   return (
 
-<footer className="site-footer">
+<footer className="site-footer" aria-label="Site footer">
 
     <div className="footer-grid"></div>
 
@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="footer-brand">
 
                 <div className="footer-logo">
-                   <img src={TATLogo} alt="TAT Logo" />
+                   <img src={TATLogo} alt="Together Advanced Technologies logo" />
                 </div>
 
                 <p>
@@ -33,7 +33,7 @@ const Footer = () => {
 
             {/* NAVIGATION */}
 
-            <div className="footer-column">
+            <nav className="footer-column" aria-label="Explore">
 
                 <span className="footer-label">
                     EXPLORE
@@ -47,12 +47,12 @@ const Footer = () => {
 
                 <a href="/contact">Contact</a>
 
-            </div>
+            </nav>
 
 
             {/* SERVICES */}
 
-            <div className="footer-column">
+            <nav className="footer-column" aria-label="Capabilities">
 
                 <span className="footer-label">
                     CAPABILITIES
@@ -86,7 +86,7 @@ const Footer = () => {
                     Technical Staffing &amp; Support
                 </a>
 
-            </div>
+            </nav>
 
 
             {/* TECHNOLOGY */}

@@ -36,26 +36,6 @@ const About = () => (
       </div>
     </section>
 
-    <section className="about-story">
-      <div className="about-section-label">
-        <span className="about-eyebrow">OUR STORY</span>
-        <span className="about-section-line" />
-      </div>
-      <div className="about-story-content">
-        <h2>Different disciplines.<span>One direction.</span></h2>
-        <p>
-          Design, development, marketing and data often live in separate
-          places. We bring them together so every decision supports the same
-          customer, the same story and the same outcome.
-        </p>
-        <p>
-          From a sharper brand experience to a connected marketing ecosystem,
-          we work alongside your team to make progress feel practical and
-          measurable.
-        </p>
-      </div>
-    </section>
-
     <section className="about-approach">
       <div className="about-section-label">
         <span className="about-eyebrow">HOW WE WORK</span>

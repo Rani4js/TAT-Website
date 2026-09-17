@@ -121,17 +121,6 @@ const Services = () => (
       </div>
     </section>
 
-    <section className="services-approach">
-      <span className="services-eyebrow">OUR APPROACH</span>
-      <h2>Ideas become <span>impact.</span></h2>
-      <p>
-        We start with the problem, build with purpose and stay close to the
-        outcome. Every engagement is shaped around your people, your platforms
-        and the result you want to create.
-      </p>
-      <a href="/contact" className="services-cta">Start a conversation <span>→</span></a>
-    </section>
-
     <section className="services-delivery">
       <div className="services-delivery-heading">
         <span className="services-eyebrow">FROM BRIEF TO MOMENTUM</span>
@@ -150,6 +139,17 @@ const Services = () => (
           </article>
         ))}
       </div>
+    </section>
+
+    <section className="services-approach">
+      <span className="services-eyebrow">OUR APPROACH</span>
+      <h2>Ideas become <span>impact.</span></h2>
+      <p>
+        We start with the problem, build with purpose and stay close to the
+        outcome. Every engagement is shaped around your people, your platforms
+        and the result you want to create.
+      </p>
+      <a href="/contact" className="services-cta">Start a conversation <span>→</span></a>
     </section>
   </main>
 );
