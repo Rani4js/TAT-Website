@@ -3,43 +3,37 @@ import { useLocation } from "react-router-dom";
 
 const siteName = "Together Advanced Technologies";
 const siteUrl = "https://togetherat.in";
+const sharedDescription =
+  "TAT delivers Salesforce Marketing Cloud, Data Cloud, Sales Cloud and Service Cloud solutions, AEM sites and authoring, web design, React app development, UI engineering and digital marketing.";
+const sharedKeywords =
+  "Salesforce Marketing Cloud, Salesforce Data Cloud, Salesforce Sales Cloud, Salesforce Service Cloud, Salesforce, web design, frontend development, UI development, email marketing, digital marketing, AEM Sites, AEM authoring, AEM development, app development, ReactJS apps, React routing, Redux, component development";
 
 const pageMetadata = {
   "/": {
     title:
       "Together Advanced Technologies | design, development, marketing and data to build digital experiences",
-    description:
-      "Together Advanced Technologies connects design, development, marketing and data to build digital experiences that move businesses forward.",
-    keywords:
-      "digital technology partner, web design, React development, AEM development, Salesforce, digital marketing, application support",
+    description: sharedDescription,
+    keywords: sharedKeywords,
   },
   "/about": {
     title: "About Together Advanced Technologies",
-    description:
-      "Learn how Together Advanced Technologies brings people, purpose and technology together to create useful, lasting digital experiences.",
-    keywords:
-      "about TAT, digital technology company, digital transformation partner, technology consulting, product development",
+    description: sharedDescription,
+    keywords: sharedKeywords,
   },
   "/services": {
     title: "Salesforce, AEM & React Development Services",
-    description:
-      "TAT delivers Salesforce Marketing Cloud, Data Cloud, Sales Cloud and Service Cloud solutions, AEM sites and authoring, web design, React app development, UI engineering and digital marketing.",
-    keywords:
-      "Salesforce Marketing Cloud, Salesforce Data Cloud, Salesforce Sales Cloud, Salesforce Service Cloud, Salesforce, web design, frontend development, UI development, email marketing, digital marketing, AEM Sites, AEM authoring, AEM development, app development, ReactJS apps, React routing, Redux, component development",
+    description: sharedDescription,
+    keywords: sharedKeywords,
   },
   "/careers": {
     title: "Careers at Together Advanced Technologies",
-    description:
-      "Build meaningful digital work with a curious, collaborative team at Together Advanced Technologies.",
-    keywords:
-      "TAT careers, technology jobs, React developer jobs, AEM jobs, Salesforce careers, digital marketing careers",
+    description: sharedDescription,
+    keywords: sharedKeywords,
   },
   "/contact": {
     title: "Contact Together Advanced Technologies",
-    description:
-      "Start a conversation with Together Advanced Technologies about your digital product, technology, marketing or support needs.",
-    keywords:
-      "contact TAT, digital technology consultation, web development enquiry, technology partner, project consultation",
+    description: sharedDescription,
+    keywords: sharedKeywords,
   },
 };
 
